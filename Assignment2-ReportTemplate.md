@@ -19,9 +19,10 @@
 * [2.2 Methods To Be Tested](#methods-to-be-tested)
 * [2.3 Test Determination Procedures and Team Work Division](#test-determination-procedures-and-team-work-division)
 * [2.4 Designed Partitions](#designed-partitions)
-* [2.5 Justification of Test Plan](#justification-of-test-plan)
 
-[3 Insights on Comparisons Between Exploratory Testing and Manual Functional Testing](#insights-on-comparisons-between-exploratory-testing-and-manual-functional-testing)
+[3 Test Cases Developed](#test-cases-developed)
+* [3.1 Range](#range)
+* [3.2 DataUtilities](#datautilities)
 
 [4 Notes on The Peer Review Process and Reporting Defects as A Group](#notes-on-the-peer-review-process-and-reporting-defects-as-a-group)
 
@@ -79,14 +80,12 @@ To cover all edge cases, each pair will also look towards performing boundary-va
 7) True input. (For boolean inputs).
 8) False input. (For boolean inputs).
 
-### Justification of Test Plan
-By splitting into pairs, one member can record defects into Backlog while simultaneously brainstorming with the other member regarding tests to run on the ATM Simulation System, thus increasing productivity. Furthermore, by having two teams testing on the same system, not only will there be rigorous testing of each functionality, but there will also be different focuses which will provide a deeper-level understanding of areas causing bugs or errors within each sub-system. By dividing areas of focus, there is a reduction in the chance of overlapping test cases, which will provide a greater variety of errors identified. By testing inputs which have a higher chance of generating successful outputs first, testers can narrow inputs down to the more problematic ones by gaining a deeper understanding of what works and what doesn’t. Exploratory testing provides a benefit due to its adaptable nature, where the tester can intuitively focus on specific problematic areas rather than an even distribution provided by scripted tests.
-
 <hr>
 
-// including the input partitions you have designed
+# Test Cases Developed
+### Range
 
-# 3 Test cases developed
+### DataUtilities
 
 Text…
 
