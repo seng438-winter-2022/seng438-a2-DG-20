@@ -95,28 +95,28 @@ Partitions Used in This:
 <ul> 
 <li>base = null and factor = -5.345
 	<ul>
-		<li>Covers partitions 1) and 5).</li>
+		<li>Covers partitions 1. and 5.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 
 <li>2. base = Range(-2.25, 100) and factor = -5.123
 	<ul>
-		<li>Covers partitions 1) and 6).</li>
+		<li>Covers partitions 1. and 6.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 
 <li>3. base = null and factor = 1000
 	<ul>
-		<li>Covers partitions 3) and 5).</li>
+		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 
 <li>4. base = Range(-2.25, 100) and factor = 2.34
 	<ul>
-		<li>Covers partitions 3) and 6).</li>
+		<li>Covers partitions 3. and 6.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = -5.265 and object.getUpperBound() = 234.00.</li>
 	</ul>
 	</li>
@@ -129,13 +129,68 @@ Partitions Used in This:
 	</li>
 </ul>
 
-
-
+shift(Range base, double delta, boolean allowZeroCrossing):
+Partitions Used in This:
+	base = {null, not null}
+	delta = {any number}
+	allowZeroCrossing = {true, false}
+ 
+base = null, delta = -4.2325, allowZeroCrossing = true
+Covers partitions 3), 5), 7).
+Expected output: Error/Exception thrown.
+base = null, delta = 500000.0, allowZeroCrossing = false
+Covers partitions 3), 5), 8).
+Expected output: Error/Exception thrown.
+base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
+Cover partitions 3), 6), 8).
+Expected output: Range object, where object.getLowerBound() = 499989.0 and object.getUpperBound() = 510072.0.
+base = Range(3.5, 89.0), delta = -4.2325, allowZeroCrossing = false
+Cover partitions 3), 6), 7).
+Expected output: Range object, where object.getLowerBound() = 0.00 and object.getUpperBound() = 84.7675.
+base = Range(-50.35, 100.70), delta = 0.0, allowZeroCrossing = true
+Boundary condition test for delta variable.
+Expected output: Range object, where object.getLowerBound() = -50.35 and object.getUpperBound() = 100.70.
+ 
+getCentralValue()
+No partitions used in this (no inputs).
+ 
+Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
+Expected output: 49.5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+expand(Range range, double lowerMargin, double upperMargin)
+Partitions Used in This:
+	range = {null, not null}
+	lowerMargin = {any number}
+	upperMargin = {any number}
+ 
+Range =  Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
+Covers partitions 3) and 6).
+Expected output: Range object, where object.getLowerBound() = 1.4 and object.getUpperBound() = 56.0.
+Range = null, lowerMargin = -0.30, upperMargin = 0.10
+Cover partitions 3) and 5).
+Expected Output: Error / Exception thrown
+Range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
+Boundary condition test for lowerMargin and upperMargin variables.
+Expected output: Range object, where object.getLowerBound() = -2.0 and object.getUpperBound() = 99.99.
+ 
+toString()
+No partitions used in this (no inputs).
+ 
+Create a Range object with lower = 1.0 and upper = 100.00 and call toString() on it.
+Expected output: "Range[1.0,100.0]".
 
 
 ### DataUtilities
 
-Text…
+
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
