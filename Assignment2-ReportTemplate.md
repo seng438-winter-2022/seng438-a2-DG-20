@@ -129,27 +129,43 @@ Partitions Used in This:
 	</li>
 </ul>
 
-shift(Range base, double delta, boolean allowZeroCrossing):
+_shift(Range base, double delta, boolean allowZeroCrossing):_
+
 Partitions Used in This:
 	base = {null, not null}
 	delta = {any number}
 	allowZeroCrossing = {true, false}
- 
-base = null, delta = -4.2325, allowZeroCrossing = true
-Covers partitions 3), 5), 7).
-Expected output: Error/Exception thrown.
-base = null, delta = 500000.0, allowZeroCrossing = false
-Covers partitions 3), 5), 8).
-Expected output: Error/Exception thrown.
-base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
-Cover partitions 3), 6), 8).
-Expected output: Range object, where object.getLowerBound() = 499989.0 and object.getUpperBound() = 510072.0.
-base = Range(3.5, 89.0), delta = -4.2325, allowZeroCrossing = false
-Cover partitions 3), 6), 7).
-Expected output: Range object, where object.getLowerBound() = 0.00 and object.getUpperBound() = 84.7675.
-base = Range(-50.35, 100.70), delta = 0.0, allowZeroCrossing = true
-Boundary condition test for delta variable.
-Expected output: Range object, where object.getLowerBound() = -50.35 and object.getUpperBound() = 100.70.
+
+<ul>
+<li>base = null, delta = -4.2325, allowZeroCrossing = true
+	<ul>
+		<li>Covers partitions 3., 5., 7.</li>
+		<li>Expected output: Error/Exception thrown.</li>
+	</ul>
+	</li>
+<li>base = null, delta = 500000.0, allowZeroCrossing = false
+	<ul>
+		<li>Covers partitions 3., 5., 8.</li>
+		<li>Expected output: Error/Exception thrown.</li>
+	</ul>
+	</li>
+<li>base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
+	<ul>
+		<li>Cover partitions 3., 6., 8.</li>
+<li>Expected output: Range object, where object.getLowerBound() = 499989.0 and object.getUpperBound() = 510072.0.</li>
+	</ul>
+<li>base = Range(3.5, 89.0), delta = -4.2325, allowZeroCrossing = false
+	<ul>
+		<li>Cover partitions 3., 6., 7.</li>
+<li>Expected output: Range object, where object.getLowerBound() = 0.00 and object.getUpperBound() = 84.7675.</li>
+	</ul>
+<li>base = Range(-50.35, 100.70), delta = 0.0, allowZeroCrossing = true
+	<ul>
+		<li>Boundary condition test for delta variable.</li>
+<li>Expected output: Range object, where object.getLowerBound() = -50.35 and object.getUpperBound() = 100.70.</li>
+	</ul>
+	</li>
+	</ul>
  
 getCentralValue()
 No partitions used in this (no inputs).
