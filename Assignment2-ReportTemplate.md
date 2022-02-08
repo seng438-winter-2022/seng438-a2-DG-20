@@ -229,7 +229,12 @@ No partitions used in this (no inputs).
 <ul> 
 <li>Create a Range object with lower = 1.0 and upper = 100.00 and call toString() on it.
 	<ul>
-		<li>Expected output: "Range[1.0, 100.0]".</li>
+		<li>Expected output: "Range[1.0,200.0]".</li>
+	</ul>
+	</li>
+<li>Create a null Range object call toString() on it.
+	<ul>
+		<li>Expected output: NullPointerException thrown.</li>
 	</ul>
 	</li>
 	</ul>
