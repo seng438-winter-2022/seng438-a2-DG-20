@@ -92,23 +92,23 @@ Partitions Used in This:
 	base = {null, not null}
 	factor = {negative, non-negative}
 
-> base = null and factor = -5.345
+> 1. base = null and factor = -5.345
 >> Covers partitions 1) and 5).
 >> Expected output: Error/Exception thrown.
 
-> base = Range(-2.25, 100) and factor = -5.123
+> 2. base = Range(-2.25, 100) and factor = -5.123
 >> Covers partitions 1) and 6).
 >> Expected output: Error/Exception thrown.
 
-> base = null and factor = 1000
+> 3. base = null and factor = 1000
 >> Covers partitions 3) and 5).
 >> Expected output: Error/Exception thrown.
 
-> base = Range(-2.25, 100) and factor = 2.34
+> 4. base = Range(-2.25, 100) and factor = 2.34
 >> Covers partitions 3) and 6).
 >> Expected output: Range object, where object.getLowerBound() = -5.265 and object.getUpperBound() = 234.00.
 
-> base = Range(-2.25, 100) and factor = 0
+> 5. base = Range(-2.25, 100) and factor = 0
 >> Boundary condition test for factor variable.
 >> Expected output: Range object, where object.getLowerBound() = 0 and object.getUpperBound() = 0.
 
