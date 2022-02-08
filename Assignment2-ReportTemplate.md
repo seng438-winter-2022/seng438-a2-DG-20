@@ -74,11 +74,10 @@ To cover all edge cases, each pair will also look towards performing boundary-va
 1) A value below the accepted input range. (For numeric inputs).
 2) A value above the accepted input range. (For numeric inputs).
 3) A value which is a part of the accepted input range. (For numeric inputs).
-4) Invalid data type. (For all inputs).
-5) NULL input. (For object, String, and Array inputs).
-6) Valid objects. (For object inputs).
-7) True input. (For boolean inputs).
-8) False input. (For boolean inputs).
+4) NULL input. (For object, String, and Array inputs).
+5) Valid objects. (For object inputs).
+6) True input. (For boolean inputs).
+7) False input. (For boolean inputs).
 
 <hr>
 
@@ -95,28 +94,28 @@ Partitions Used in This:
 <ul> 
 <li>base = null and factor = -5.345
 	<ul>
-		<li>Covers partitions 1. and 5.</li>
+		<li>Covers partitions 1. and 4.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 
 <li>2. base = Range(-2.25, 100) and factor = -5.123
 	<ul>
-		<li>Covers partitions 1. and 6.</li>
+		<li>Covers partitions 1. and 5.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 
 <li>3. base = null and factor = 1000
 	<ul>
-		<li>Covers partitions 3. and 5.</li>
+		<li>Covers partitions 3. and 4.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 
 <li>4. base = Range(-2.25, 100) and factor = 2.34
 	<ul>
-		<li>Covers partitions 3. and 6.</li>
+		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = -5.265 and object.getUpperBound() = 234.00.</li>
 	</ul>
 	</li>
@@ -139,24 +138,24 @@ Partitions Used in This:
 <ul>
 <li>base = null, delta = -4.2325, allowZeroCrossing = true
 	<ul>
-		<li>Covers partitions 3., 5., 7.</li>
+		<li>Covers partitions 3., 4., 6.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 <li>base = null, delta = 500000.0, allowZeroCrossing = false
 	<ul>
-		<li>Covers partitions 3., 5., 8.</li>
+		<li>Covers partitions 3., 4., 7.</li>
 		<li>Expected output: Error/Exception thrown.</li>
 	</ul>
 	</li>
 <li>base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
 	<ul>
-		<li>Cover partitions 3., 6., 8.</li>
+		<li>Cover partitions 3., 5., 7.</li>
 <li>Expected output: Range object, where object.getLowerBound() = 499989.0 and object.getUpperBound() = 510072.0.</li>
 	</ul>
 <li>base = Range(3.5, 89.0), delta = -4.2325, allowZeroCrossing = false
 	<ul>
-		<li>Cover partitions 3., 6., 7.</li>
+		<li>Cover partitions 3., 5., 6.</li>
 <li>Expected output: Range object, where object.getLowerBound() = 0.00 and object.getUpperBound() = 84.7675.</li>
 	</ul>
 <li>base = Range(-50.35, 100.70), delta = 0.0, allowZeroCrossing = true
@@ -165,44 +164,49 @@ Partitions Used in This:
 <li>Expected output: Range object, where object.getLowerBound() = -50.35 and object.getUpperBound() = 100.70.</li>
 	</ul>
 	</li>
-	</ul>
+</ul>
  
-getCentralValue()
+_getCentralValue():_
+
 No partitions used in this (no inputs).
  
 Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
 Expected output: 49.5 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-expand(Range range, double lowerMargin, double upperMargin)
+
+_expand(Range range, double lowerMargin, double upperMargin):_
+
 Partitions Used in This:
 	range = {null, not null}
 	lowerMargin = {any number}
 	upperMargin = {any number}
+	
+<ul>
+<li>Range = Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
+	<ul>
+		<li>Covers partitions 3. and 5.</li>
+		<li>Expected output: Range object, where object.getLowerBound() = 1.4 and object.getUpperBound() = 56.0.</li>
+	</ul>
+	</li>
+<li>Range = null, lowerMargin = -0.30, upperMargin = 0.10
+	<ul>
+		<li>Cover partitions 3. and 4.</li>
+		<li>Expected output: Error/Exception thrown.</li>
+	</ul>
+	</li>
+<li>Range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
+	<ul>
+		<li>Boundary condition test for lowerMargin and upperMargin variables.</li>
+		<li>Expected output: Range object, where object.getLowerBound() = -2.0 and object.getUpperBound() = 99.99.</li>
+	</ul>
+	</li>
+</ul>
  
-Range =  Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
-Covers partitions 3) and 6).
-Expected output: Range object, where object.getLowerBound() = 1.4 and object.getUpperBound() = 56.0.
-Range = null, lowerMargin = -0.30, upperMargin = 0.10
-Cover partitions 3) and 5).
-Expected Output: Error / Exception thrown
-Range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
-Boundary condition test for lowerMargin and upperMargin variables.
-Expected output: Range object, where object.getLowerBound() = -2.0 and object.getUpperBound() = 99.99.
- 
-toString()
+_toString():_
+
 No partitions used in this (no inputs).
  
 Create a Range object with lower = 1.0 and upper = 100.00 and call toString() on it.
 Expected output: "Range[1.0,100.0]".
-
 
 ### DataUtilities
 
