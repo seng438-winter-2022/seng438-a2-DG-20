@@ -93,24 +93,24 @@ Partitions Used in This:
 	factor = {negative, non-negative}
 
 <ul> 
-<li>base = null and factor = -5.345
+<li>1. base = null and factor = -5.345
 	<ul>
 		<li>Covers partitions 1. and 4.</li>
-		<li>Expected output: Error/Exception thrown.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
 <li>2. base = Range(-2.25, 100) and factor = -5.123
 	<ul>
 		<li>Covers partitions 1. and 5.</li>
-		<li>Expected output: Error/Exception thrown.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
 <li>3. base = null and factor = 1000
 	<ul>
 		<li>Covers partitions 3. and 4.</li>
-		<li>Expected output: Error/Exception thrown.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
@@ -124,7 +124,7 @@ Partitions Used in This:
 <li>5. base = Range(-2.25, 100) and factor = 0
 	<ul>
 		<li>Boundary condition test for factor variable.</li>
-		<li>Expected output: Range object, where object.getLowerBound() = 0 and object.getUpperBound() = 0.</li>
+		<li>Expected output: Range object, where object.getLowerBound() = 0.0 and object.getUpperBound() = 0.0.</li>
 	</ul>
 	</li>
 </ul>
@@ -143,13 +143,13 @@ Partitions Used in This:
 <li>base = null, delta = -4.2325, allowZeroCrossing = true
 	<ul>
 		<li>Covers partitions 3., 4., 6.</li>
-		<li>Expected output: Error/Exception thrown.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 <li>base = null, delta = 500000.0, allowZeroCrossing = false
 	<ul>
 		<li>Covers partitions 3., 4., 7.</li>
-		<li>Expected output: Error/Exception thrown.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 <li>base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
@@ -179,7 +179,12 @@ No partitions used in this (no inputs).
 <ul>
 <li>Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
 	<ul>
-		<li>Expected output: 49.5</li>
+		<li>Expected output: 50.5</li>
+	</ul>
+	</li>
+<li>Create a null Range object and call getCentralValue() on it.
+	<ul>
+		<li>Expected output: NullPointerException thrown</li>
 	</ul>
 	</li>
 	</ul>
