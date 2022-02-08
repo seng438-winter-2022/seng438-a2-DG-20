@@ -128,7 +128,7 @@ Partitions Used in This:
 	</li>
 </ul>
 
-<br>
+<hr>
 
 _shift(Range base, double delta, boolean allowZeroCrossing):_
 
@@ -168,7 +168,7 @@ Partitions Used in This:
 	</li>
 </ul>
 
-<br>
+<hr>
  
 _getCentralValue():_
 
@@ -177,7 +177,7 @@ No partitions used in this (no inputs).
 Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
 Expected output: 49.5 
 
-<br>
+<hr>
 
 _expand(Range range, double lowerMargin, double upperMargin):_
 
@@ -207,7 +207,7 @@ Partitions Used in This:
 	</li>
 </ul>
 
-<br>
+<hr>
  
 _toString():_
 
