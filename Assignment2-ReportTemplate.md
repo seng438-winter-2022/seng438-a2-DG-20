@@ -1,20 +1,88 @@
-**SENG 438 - Software Testing, Reliability, and Quality**
-
-**Lab. Report \#2 – Requirements-Based Test Generation**
+# SENG 438 - Software Testing, Reliability, and Quality**
+# Lab. Report \#2 – Requirements-Based Test Generation**
 
 | Group \#:      | 25    |
 | -------------- | --- |
-| Student Names: |     |
 |   Divyansh Goyal             |     |
 |   Curtis Silva             |     |
 |   Liam Parmar             |     |
 |   Gurpartap Sohi |    |
 
-# 1 Introduction
+<hr>
+
+**Table of Contents**
+
+[1 Introduction](#introduction)
+
+[2 Detailed Plan of JUnit Testing](#detailed-plan-of-junit-testing)
+* [2.1 Introduction](#introduction-1)
+* [2.2 Methods To Be Tested](#methods-to-be-tested)
+* [2.3 Test Determination Procedures and Team Work Division](#test-determination-procedures-and-team-work-division)
+* [2.4 Designed Partitions](#designed-partitions)
+* [2.5 Justification of Test Plan](#justification-of-test-plan)
+
+[3 Insights on Comparisons Between Exploratory Testing and Manual Functional Testing](#insights-on-comparisons-between-exploratory-testing-and-manual-functional-testing)
+
+[4 Notes on The Peer Review Process and Reporting Defects as A Group](#notes-on-the-peer-review-process-and-reporting-defects-as-a-group)
+
+[5 Pair Testing Management and Division of Responsibilities](#pair-testing-management-and-division-of-responsibilities)
+
+[6 Lessons Learned from Teamwork](#lessons-learned-from-teamwork)
+
+[7 Difficulties Encountered, Challenges Overcome, and Lessons Learned](#difficulties-encountered-challenges-overcome-and-lessons-learned)
+
+[8 Comments and Feedback on The Lab Assignment](#comments-and-feedback-on-the-lab-assignment)
+
+<hr>
+
+## Introduction
 
 Text…
 
-# 2 Detailed description of unit test strategy
+<hr>
+
+## Detailed Plan of JUnit Testing
+
+### Introduction
+The following test plan is designed to perform a thorough testing on 5 methods each from the Range class and DataUtilities class. Specifically, the creation of unit tests will be utilized to test the requirements of Range and DataUtilities. The intention of these tests is to determine the code quality of the methods, according to the JavaDocs description of each. The purpose of this black-box testing is to scrutinize the requirements for each method and create tests solely based on those requirements, without looking at the source code. The plan will identify the methods intended to be tested, test determination procedures and division of work in the team, and the partitions created.
+
+### Methods To Be Tested
+<strong>Range:</strong>
+
+* scale(Range base, double factor)
+* shift(Range base, double delta, boolean allowZeroCrossing)
+* getCentralValue()
+* expand(Range range, double lowerMargin, double upperMargin)
+* toString()
+
+<strong>DataUtilities:</strong>
+* calculateColumnTotal(Values2D data, int column)
+* calculateRowTotal(Values2D data, int row, int[] validCols)
+* createNumberArray(double[] data)
+* equal(double[][] a, double[][] b)
+* getCumulativePercentages(KeyedValues data)
+
+### Test Determination Procedures and Team Work Division
+To develop the unit tests that will be used to thoroughly test the Range class and DataUtilities class, the group will employ the use of peer-programming. As such, the group will divide into pairs, where one pair will focus on the development of test cases for the Range class and the other will focus on the development of test cases for the DataUtilities test cases. Prior to splitting into pairs, each member of the group will read through the JavaDocs of the selected methods and discuss what exactly each method should be doing. After splitting into pairs, each pair will take as long as they require to determine edge cases, equivalence classes, and invalid input tests to ensure every possible functionality of the method works as specified. 
+ 
+To avoid redundancy, equivalence classes must be analyzed. To create equivalence classes, each pair will list each type of input for an individual method. After listing every possible type of input, the pair will identify any inputs which are similar and will provide the same expected output. These groupings will be the classes, and thus when creating test cases, only one test case will be created per class. This will lead to a more efficient testing process. 
+ 
+To cover all edge cases, each pair will also look towards performing boundary-value analysis. To do so, the pair will look at the boundaries of the equivalence classes, and choose an input that lies on that boundary, or just outside of it. For example, if the JavaDocs specify that the input range of a variable is [0, 10], boundary test cases would be to provide an input of -1, 0, 10, and 11. These test cases allow the program specifications to be held accountable and ensures that those edge cases are properly handled by the system.
+
+### Designed Partitions
+1) A value below the accepted input range. (For numeric inputs).
+2) A value above the accepted input range. (For numeric inputs).
+3) A value which is a part of the accepted input range. (For numeric inputs).
+4) Invalid data type. (For all inputs).
+5) NULL input. (For object, String, and Array inputs).
+6) Valid objects. (For object inputs).
+7) True input. (For boolean inputs).
+8) False input. (For boolean inputs).
+
+### Justification of Test Plan
+By splitting into pairs, one member can record defects into Backlog while simultaneously brainstorming with the other member regarding tests to run on the ATM Simulation System, thus increasing productivity. Furthermore, by having two teams testing on the same system, not only will there be rigorous testing of each functionality, but there will also be different focuses which will provide a deeper-level understanding of areas causing bugs or errors within each sub-system. By dividing areas of focus, there is a reduction in the chance of overlapping test cases, which will provide a greater variety of errors identified. By testing inputs which have a higher chance of generating successful outputs first, testers can narrow inputs down to the more problematic ones by gaining a deeper understanding of what works and what doesn’t. Exploratory testing provides a benefit due to its adaptable nature, where the tester can intuitively focus on specific problematic areas rather than an even distribution provided by scripted tests.
+
+<hr>
 
 // including the input partitions you have designed
 
