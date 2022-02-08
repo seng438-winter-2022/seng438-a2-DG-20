@@ -88,6 +88,7 @@ To cover all edge cases, each pair will also look towards performing boundary-va
 _scale(Range base, double factor):_
 
 Partitions Used in This:
+	
 	base = {null, not null}
 	factor = {negative, non-negative}
 
@@ -133,6 +134,7 @@ Partitions Used in This:
 _shift(Range base, double delta, boolean allowZeroCrossing):_
 
 Partitions Used in This:
+	
 	base = {null, not null}
 	delta = {any number}
 	allowZeroCrossing = {true, false}
@@ -173,15 +175,21 @@ Partitions Used in This:
 _getCentralValue():_
 
 No partitions used in this (no inputs).
- 
-Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
-Expected output: 49.5 
+
+<ul>
+<li>Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
+	<ul>
+		<li>Expected output: 49.5</li>
+	</ul>
+	</li>
+	</ul>
 
 <hr>
 
 _expand(Range range, double lowerMargin, double upperMargin):_
 
 Partitions Used in This:
+
 	range = {null, not null}
 	lowerMargin = {any number}
 	upperMargin = {any number}
@@ -212,6 +220,7 @@ Partitions Used in This:
 _toString():_
 
 No partitions used in this (no inputs).
+
 <ul> 
 <li>Create a Range object with lower = 1.0 and upper = 100.00 and call toString() on it.
 	<ul>
