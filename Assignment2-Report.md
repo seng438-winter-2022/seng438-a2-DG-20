@@ -393,7 +393,8 @@ Partitions Used in This:
 
 	a = {null, numbers}
 	b = {null, numbers}
-	
+
+<ol>
 <li>a = null and b = null
 	<ul>
 		<li>Cover partition 4.</li>
