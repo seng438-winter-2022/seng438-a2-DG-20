@@ -266,29 +266,34 @@ Partitions Used in This:
 	</li>
 <li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 3.123, getValue(1, 2) = 4, getValue(2, 2) = -55.009. Set column = 2
 	<ul>
-		<li>Covers partitions 3. and 6.
-		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -47.886
+		<li>Covers partitions 3. and 6.</li>
+		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -47.886.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 2.873, getValue(1, 2) = 0, getValue(1, 1) = 67.622, getValue(2, 2) = -43.132. Set column = 2
 	<ul>
-		<li>Covers partitions 3. and 6.
-		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -40.259
+		<li>Covers partitions 3. and 6.</li>
+		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -40.259.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
 	<ul>
-		<li>Covers partitions 1. and 6.
-		<li>Expected output: NullPointerException thrown.
+		<li>Covers partitions 1. and 6.</li>
+		<li>Expected output: NullPointerException thrown.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123,
-getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
-Covers partitions 2. and 6.
-Expected output: NullPointerException thrown.
-First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
-	      -	Boundary condition test for “column” variable.
-	      -	Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 162.473
+<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123, getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
+	<ul>
+		<li>Covers partitions 2. and 6.</li>
+		<li>Expected output: NullPointerException thrown.</li>
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
+	<ul>
+		<li>Boundary condition test for “column” variable.</li>
+		<li>Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 162.473.</li>
+	</ul>
+	</li>
  </ol>
  
  
