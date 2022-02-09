@@ -427,12 +427,6 @@ Partitions Used in This:
 		<li>Expected output: Returns false, the arrays a and b do not have the same dimensions.</li>
 	</ul>
 	</li>
-<li>a = {[null, INF], [null, null]} and b = {[INF, null], [INF, INF]}
-	<ul>
-		<li>Cover partitions 3. and 5.</li>
-		<li>Expected output: Returns false, the arrays a and b have the same values (NaN considered equal).</li>
-	</ul>
-	</li>
 <li>a = {[NaN, NaN]} and b = {[NaN, NaN]}
 	<ul>
 		<li>Cover partitions 3. and 5.</li>
@@ -470,10 +464,6 @@ Partitions Used in This:
 </ol>
 
 <hr>
-
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
