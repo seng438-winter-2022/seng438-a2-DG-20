@@ -260,15 +260,15 @@ public class DataUtilitiesTest extends DataUtilities {
 	     });
 		
 		// createNumberArray() initialization for testing
-      nullArray = null;
-		  createNumberArrayNegativeDoubles = new double[]{-9.1, -100.43, -99.5555};
+		nullArray = null;
+		createNumberArrayNegativeDoubles = new double[]{-9.1, -100.43, -99.5555};
 	    createNumberArrayPositiveDoubles = new double[]{123.123123123, 8.888888888};
 	    createNumberArrayInts = new double[] {1, 2, 3, 4};
 	    createNumberArrayMixed = new double[] {20.91123123, -73.12, 7};
 	    
 	    // equal() initialization for testing
-      null2DArrayA = null;
-      null2DArrayB = null;
+	    null2DArrayA = null;
+      	null2DArrayB = null;
 	    equalNullAndValid = new double[][] {{0, 1, 2}, {0, 1, 2}};
 	    equalNumbersMatchAndMismatchA = new double[][] {{0, 1, 2}, {3, 4, 5}};
 	    equalNumbersMatchB = new double[][] {{0, 1, 2}, {3, 4, 5}};
@@ -284,11 +284,11 @@ public class DataUtilitiesTest extends DataUtilities {
 	    equalINFAndNaNMismatchA = new double[][] {{Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY}, {Double.NaN, Double.NaN}};
 	    equalINFAndNaNMismatchB = new double[][] {{Double.NaN, Double.NaN}, {Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY}};
 
-      // clone() initialization for testing
-      clonePositiveDoubles = new double[][]{{12.32, 29.48, 30.7}, {91.91, 8.19, 28.29}};
-      cloneNegativeDoubles = new double[][]{{-9.88, -9766.2, -0.1}, {-0.2}, {-908.123}};
-      cloneInts = new double[][]{{-2, 3, 5}, {6, 13, -12}, {4, 9, 2}, {7, 8, 9}};
-      cloneMixed = new double[][]{{12, 13.1, -1, 123.456456}};
+        // clone() initialization for testing
+        clonePositiveDoubles = new double[][]{{12.32, 29.48, 30.7}, {91.91, 8.19, 28.29}};
+        cloneNegativeDoubles = new double[][]{{-9.88, -9766.2, -0.1}, {-0.2}, {-908.123}};
+        cloneInts = new double[][]{{-2, 3, 5}, {6, 13, -12}, {4, 9, 2}, {7, 8, 9}};
+        cloneMixed = new double[][]{{12, 13.1, -1, 123.456456}};
     }
 
    // Tests for the calculateColumnTotal()
