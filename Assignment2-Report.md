@@ -182,6 +182,16 @@ No partitions used in this (no inputs).
 		<li>Expected output: 50.5</li>
 	</ul>
 	</li>
+<li>Create a Range object with lower = -100.0 and upper = -8.00 and call getCentralValue() on it.
+	<ul>
+		<li>Expected output: -54.00</li>
+	</ul>
+	</li>
+<li>Create a Range object with lower = -20.00 and upper = -20.00 and call getCentralValue() on it.
+	<ul>
+		<li>Expected output: 0.00</li>
+	</ul>
+	</li>
 <li>Create a null Range object and call getCentralValue() on it.
 	<ul>
 		<li>Expected output: NullPointerException thrown</li>
@@ -227,9 +237,9 @@ _toString():_
 No partitions used in this (no inputs).
 
 <ul> 
-<li>Create a Range object with lower = 1.0 and upper = 100.00 and call toString() on it.
+<li>Create a Range object with lower = -12.0 and upper = 100.00 and call toString() on it.
 	<ul>
-		<li>Expected output: "Range[1.0,200.0]".</li>
+		<li>Expected output: "Range[-12.0,100.0]".</li>
 	</ul>
 	</li>
 <li>Create a null Range object call toString() on it.
