@@ -3,6 +3,7 @@
  * Assignment: 2
  * Team Members: Curtis Silva, Divyansh Goyal, Gurpartap Sohi, Liam Parmar
  */
+
 package org.jfree.data.test;
 
 // Import statements.
@@ -57,24 +58,28 @@ public class RangeTest {
 
     // Tests for the scale() method.
     
+    // Tests for a null Range object with an invalid "factor" value which should cause an IllegalArgumentException to be thrown
     @Test(expected = IllegalArgumentException.class)
     public void scaleNullRangeNegativeFactor() throws Exception 
     {
     	Range returnObj = generalRange.scale(nullRange, -5.345);
     }
     
+    // Tests for a valid Range object with a invalid "factor" value which should cause an IllegalArgumentException to be thrown
     @Test(expected = IllegalArgumentException.class)
     public void scaleValidRangeNegativeFactor() throws Exception
     {
     	Range returnObj = generalRange.scale(scaleRange, -5.123);
     }
     
+    // Tests for a null Range object with a valid "factor" value which should cause an IllegalArgumentException to be thrown
     @Test(expected = IllegalArgumentException.class)
     public void scaleNullRangeValidFactor() throws Exception
     {
     	Range returnObj = generalRange.scale(nullRange, 1000);
     }
-
+    
+    // Tests for a valid Range object with a valid "factor" value which should return a Range object which matches the expected Range object
     @Test
     public void scaleValidRangeValidFactor()
     {
@@ -83,6 +88,7 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    // Tests for a boundary condition where "factor" value is 0.0 which should return a Range object where the lower and upper bounds are both 0.0
     @Test
     public void scaleFactorZero()
     {
@@ -91,20 +97,24 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    // Tests for the shift() method.
     
-    
+    // Tests for a null Range object along with a true value for "allowZeroCrossing" which should throw an IllegalArgumentException
     @Test(expected = IllegalArgumentException.class)
     public void shiftNullRangeTrueZeroCrossing() throws Exception
     {
     	Range returnObj = generalRange.shift(nullRange, -4.2325, true);
     }
     
+    // Tests for a null Range object along with a false value for "allowZeroCrossing" which should throw an IllegalArgumentException
     @Test(expected = IllegalArgumentException.class)
     public void shiftNullRangeFalseZeroCrossing() throws Exception
     {
     	Range returnObj = generalRange.shift(nullRange, 500000, false);
     }
     
+    // Tests for a valid Range object along with a true value for "allowZeroCrossing" which should return a Range object which matches the expected 
+    // Range object
     @Test
     public void shiftValidRangeTrueZeroCrossing()
     {
@@ -113,6 +123,8 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    // Tests for a valid Range object along with a false value for "allowZeroCrossing" which should return a Range object which matches the expected 
+    // Range object
     @Test
     public void shiftValidRangeFalseZeroCrossing()
     {
@@ -121,6 +133,7 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    // Tests for a boundary condition where "delta" is 0.0 with a true value for "allowZeroCrossing" which should return a unchanged Range object 
     @Test
     public void shiftDeltaZero()
     {
@@ -129,8 +142,9 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    // Tests for the getCentralValue() method.
     
-    
+    // Tests for a valid Range object where the central value is positive, it should return a double which matches the expected double
     @Test
     public void getPositiveCentralValueValidRange()
     {
@@ -139,6 +153,7 @@ public class RangeTest {
     	assert(expected == actual);
     }
     
+    // Tests for a valid Range object where the central value is negative, it should return a double which matches the expected double
     @Test
     public void getNegativeCentralValueValidRange()
     {
@@ -147,6 +162,7 @@ public class RangeTest {
     	assert(expected == actual);
     }
     
+    // Tests for a valid Range object where the central value is zero, it should return a double which is 0.0
     @Test
     public void getZeroCentralValueValidRange()
     {
@@ -155,31 +171,38 @@ public class RangeTest {
     	assert(expected == actual);
     }
     
+    // Tests for a null Range object which should throw an NullPointerException
     @Test(expected = NullPointerException.class)
     public void getCentralValueNullRange()
     {
     	double actual = nullRange.getCentralValue();
     }
     
+    // Tests for the expand() method.
     
-    
+    // Tests for a valid Range object where one margin is negative and the other is positive, it should return a Range object 
+    // which matches the expected Range object
     @Test
     public void expandValidMargins()
     {
     	Range returnObj = Range.expand(expandValidTester, -0.10, 3.00);
     	Range expectedObj = new Range(1.4, 56.0);
+    	// As seen in the example provided in the Github Repository, the bounds have been formatted 
+    	// to account for the overflow of numbers for the least significant bit of the double  
     	double lowerBoundActual = Math.round(returnObj.getLowerBound() * 100000000.0) / 100000000.0;
     	double upperBoundActual = Math.round(returnObj.getUpperBound() * 100000000.0) / 100000000.0;
     	Range actualObj = new Range(lowerBoundActual, upperBoundActual);
     	assertEquals(expectedObj, actualObj);
     }
     
+    // Tests for a null Range object, which should throw a IllegalArgumentException
     @Test(expected = IllegalArgumentException.class)
     public void expandNullRange()
     {
     	Range returnObj = Range.expand(nullRange, -0.30, 0.10);
     }
     
+    // Tests for a boundary condition with a valid Range object where both margins are 0.00, it should return a unchanged Range object
     @Test
     public void expandZeroMargins()
     {
@@ -188,8 +211,9 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    // Tests for the toString() method.
     
-    
+    // Tests for a valid Range object which should return a String which matches the expected String
     @Test
     public void toStringValidRange()
     {
@@ -198,6 +222,7 @@ public class RangeTest {
     	assertEquals(expectedMessage, actualMessage);
     }
     
+    // Tests for a null Range object which should throw a NullPointerException
     @Test(expected = NullPointerException.class)
     public void toStringNullRange() throws Exception
     {
