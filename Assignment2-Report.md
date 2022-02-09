@@ -459,6 +459,16 @@ Partitions Used in This:
 
 <hr>
 
+_clone(double [][] source)_
+
+Partitions Used in This:
+
+<ol>
+	
+</ol>
+
+<hr>
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
