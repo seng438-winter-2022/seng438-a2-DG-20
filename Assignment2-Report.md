@@ -298,38 +298,63 @@ Partitions Used in This:
  
  
  
-calculateRowTotal(Values2D data, int row)
+_calculateRowTotal(Values2D data, int row)_
+
 Partitions Used in This:
+
 	data = {null, not null}
 	row = {positive number, negative number, above input range}
+	
+<ol>
+<li>data = null and row = 2
+	<ul>
+		<li>Covers partitions 3. and 4.</li>
+		<li>Expected output: IllegalArgumentException Thrown.</li>
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(0, 0) = 8.71, getValue(0, 1) = 1, getValue(0, 2) = -22.394. Set row = 0
+	<ul>
+		<li>Covers partitions 3. and 5.</li>
+		<li>Expected output: Returns a double of the summation of values in row 0, resulting in a return value of -12.684.</li>
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 37.17, getValue(1, 1) = 0, getValue(1, 2) = 63.193, getValue(2, 2) = -200.837. Set row = 1
+	<ul>
+		<li>Covers partitions 3. and 5.</li>
+		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -100.474.</li>
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
+	<ul>
+		<li>Covers partitions 1. and 5.</li>
+		<li>Expected output: NullPointerException thrown.</li>
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 90.80, getValue(1, 1) = 88.320, getValue(1, 2) = 7.8123, getValue(0, 0) = 31.912, getValue(0, 1) =8.29, getValue(0, 2) = 14.289 and row = 2
+	<ul>
+		<li>Covers partitions 2. and 6.</li>
+		<li>Expected output: NullPointerException thrown.</li>
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 36.738, getValue(1, 1) = 89.324, getValue(1, 2) = 2.145, getValue(0, 0) = 32.483, getValue(0, 1) = 19.82, getValue(0, 2) = 71.21 and row = 1
+	<ul>
+		<li>Boundary condition test for column variable.</li>
+		<li>Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 128.207.</li>
+	</ul>
+	</li>
+ </ol>
  
-data = null and row = 2
-Covers partitions 3. and 4.
-Expected output: IllegalArgumentException Thrown.
-First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(0, 0) = 8.71, getValue(0, 1) = 1, getValue(0, 2) = -22.394. Set row = 0
-Covers partitions 3. and 5.
-Expected output: Returns a double of the summation of values in row 0, resulting in a return value of -12.684.
-First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 37.17, getValue(1, 1) = 0, getValue(1, 2) = 63.193, getValue(2, 2) = -200.837. Set row = 1
-Covers partitions 3. and 5.
-Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -100.474
-First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
-Covers partitions 1. and 5.
-Expected output: NullPointerException thrown.
-First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 90.80, getValue(1, 1) = 88.320, getValue(1, 2) = 7.8123, getValue(0, 0) = 31.912, getValue(0, 1) =8.29, getValue(0, 2) = 14.289 and row = 2
-Covers partitions 2. and 6.
-Expected output: NullPointerException thrown.
-First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 36.738, getValue(1, 1) = 89.324, getValue(1, 2) = 2.145, getValue(0, 0) = 32.483, getValue(0, 1) = 19.82, getValue(0, 2) = 71.21 and row = 1
-	      -	Boundary condition test for column variable
-	      -	Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 128.207
  
  
  
  
- 
- 
-createNumberArray(double[] data)
+_createNumberArray(double[] data)_
+
 Partitions Used in This:
+
 	data = {null, not null}
+	
+<ol>	
 data = null
 Covers partition 4.
 Expected output: IllegalArgumentException thrown.
