@@ -60,28 +60,28 @@ public class RangeTest {
     
     // Tests for a null Range object with an invalid "factor" value which should cause an IllegalArgumentException to be thrown
     @Test(expected = IllegalArgumentException.class)
-    public void scaleNullRangeNegativeFactor() throws Exception 
+    public void scaleNullRangeNegativeFactorTest() throws Exception 
     {
     	Range returnObj = generalRange.scale(nullRange, -5.345);
     }
     
     // Tests for a valid Range object with a invalid "factor" value which should cause an IllegalArgumentException to be thrown
     @Test(expected = IllegalArgumentException.class)
-    public void scaleValidRangeNegativeFactor() throws Exception
+    public void scaleValidRangeNegativeFactorTest() throws Exception
     {
     	Range returnObj = generalRange.scale(scaleRange, -5.123);
     }
     
     // Tests for a null Range object with a valid "factor" value which should cause an IllegalArgumentException to be thrown
     @Test(expected = IllegalArgumentException.class)
-    public void scaleNullRangeValidFactor() throws Exception
+    public void scaleNullRangeValidFactorTest() throws Exception
     {
     	Range returnObj = generalRange.scale(nullRange, 1000);
     }
     
     // Tests for a valid Range object with a valid "factor" value which should return a Range object which matches the expected Range object
     @Test
-    public void scaleValidRangeValidFactor()
+    public void scaleValidRangeValidFactorTest()
     {
     	Range returnObj = generalRange.scale(scaleRange, 2.34);
     	Range expectedObj = new Range(-5.265, 234.00);
@@ -90,7 +90,7 @@ public class RangeTest {
     
     // Tests for a boundary condition where "factor" value is 0.0 which should return a Range object where the lower and upper bounds are both 0.0
     @Test
-    public void scaleFactorZero()
+    public void scaleFactorZeroTest()
     {
     	Range returnObj = generalRange.scale(scaleRange, 0.0);
     	Range expectedObj = new Range(0.0, 0.0);
@@ -101,14 +101,14 @@ public class RangeTest {
     
     // Tests for a null Range object along with a true value for "allowZeroCrossing" which should throw an IllegalArgumentException
     @Test(expected = IllegalArgumentException.class)
-    public void shiftNullRangeTrueZeroCrossing() throws Exception
+    public void shiftNullRangeTrueZeroCrossingTest() throws Exception
     {
     	Range returnObj = generalRange.shift(nullRange, -4.2325, true);
     }
     
     // Tests for a null Range object along with a false value for "allowZeroCrossing" which should throw an IllegalArgumentException
     @Test(expected = IllegalArgumentException.class)
-    public void shiftNullRangeFalseZeroCrossing() throws Exception
+    public void shiftNullRangeFalseZeroCrossingTest() throws Exception
     {
     	Range returnObj = generalRange.shift(nullRange, 500000, false);
     }
@@ -116,7 +116,7 @@ public class RangeTest {
     // Tests for a valid Range object along with a true value for "allowZeroCrossing" which should return a Range object which matches the expected 
     // Range object
     @Test
-    public void shiftValidRangeTrueZeroCrossing()
+    public void shiftValidRangeTrueZeroCrossingTest()
     {
     	Range returnObj = generalRange.shift(shiftRangeTrueCrossing, 500000.0, true);
     	Range expectedObj = new Range(499989.0, 510072.0);
@@ -126,7 +126,7 @@ public class RangeTest {
     // Tests for a valid Range object along with a false value for "allowZeroCrossing" which should return a Range object which matches the expected 
     // Range object
     @Test
-    public void shiftValidRangeFalseZeroCrossing()
+    public void shiftValidRangeFalseZeroCrossingTest()
     {
     	Range returnObj = generalRange.shift(shiftRangeFalseCrossing, -4.2325, false);
     	Range expectedObj = new Range(0.00, 84.7675);
@@ -135,7 +135,7 @@ public class RangeTest {
     
     // Tests for a boundary condition where "delta" is 0.0 with a true value for "allowZeroCrossing" which should return a unchanged Range object 
     @Test
-    public void shiftDeltaZero()
+    public void shiftDeltaZeroTest()
     {
     	Range returnObj = generalRange.shift(shiftRangeBoundary, 0.0, true);
     	Range expectedObj = new Range(-50.35, 100.70);
@@ -146,7 +146,7 @@ public class RangeTest {
     
     // Tests for a valid Range object where the central value is positive, it should return a double which matches the expected double
     @Test
-    public void getPositiveCentralValueValidRange()
+    public void getPositiveCentralValueValidRangeTest()
     {
     	double expected = 50.5;
     	double actual = centralValueTesterPositive.getCentralValue();
@@ -155,7 +155,7 @@ public class RangeTest {
     
     // Tests for a valid Range object where the central value is negative, it should return a double which matches the expected double
     @Test
-    public void getNegativeCentralValueValidRange()
+    public void getNegativeCentralValueValidRangeTest()
     {
     	double expected = -54.00;
     	double actual = centralValueTesterNegative.getCentralValue();
@@ -164,7 +164,7 @@ public class RangeTest {
     
     // Tests for a valid Range object where the central value is zero, it should return a double which is 0.0
     @Test
-    public void getZeroCentralValueValidRange()
+    public void getZeroCentralValueValidRangeTest()
     {
     	double expected = 0.00;
     	double actual = centralValueTesterZero.getCentralValue();
@@ -173,7 +173,7 @@ public class RangeTest {
     
     // Tests for a null Range object which should throw an NullPointerException
     @Test(expected = NullPointerException.class)
-    public void getCentralValueNullRange()
+    public void getCentralValueNullRangeTest()
     {
     	double actual = nullRange.getCentralValue();
     }
@@ -183,7 +183,7 @@ public class RangeTest {
     // Tests for a valid Range object where one margin is negative and the other is positive, it should return a Range object 
     // which matches the expected Range object
     @Test
-    public void expandValidMargins()
+    public void expandValidMarginsTest()
     {
     	Range returnObj = Range.expand(expandValidTester, -0.10, 3.00);
     	Range expectedObj = new Range(1.4, 56.0);
@@ -197,14 +197,14 @@ public class RangeTest {
     
     // Tests for a null Range object, which should throw a IllegalArgumentException
     @Test(expected = IllegalArgumentException.class)
-    public void expandNullRange()
+    public void expandNullRangeTest()
     {
     	Range returnObj = Range.expand(nullRange, -0.30, 0.10);
     }
     
     // Tests for a boundary condition with a valid Range object where both margins are 0.00, it should return a unchanged Range object
     @Test
-    public void expandZeroMargins()
+    public void expandZeroMarginsTest()
     {
     	Range returnObj = Range.expand(expandMarginBoundary, 0.00, 0.00);
     	Range expectedObj = new Range(-2.0, 99.99);
@@ -215,7 +215,7 @@ public class RangeTest {
     
     // Tests for a valid Range object which should return a String which matches the expected String
     @Test
-    public void toStringValidRange()
+    public void toStringValidRangeTest()
     {
     	String actualMessage = toStringValidTester.toString();
     	String expectedMessage = "Range[-12.0,200.0]";
@@ -224,7 +224,7 @@ public class RangeTest {
     
     // Tests for a null Range object which should throw a NullPointerException
     @Test(expected = NullPointerException.class)
-    public void toStringNullRange() throws Exception
+    public void toStringNullRangeTest() throws Exception
     {
     	String actualMessage = nullRange.toString();
     }
