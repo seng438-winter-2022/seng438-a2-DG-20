@@ -250,7 +250,125 @@ No partitions used in this (no inputs).
 	</ol>
 
 ### DataUtilities
+_calculateColumnTotal(Values2D data, int column)_
 
+Partitions Used in This:
+
+	data = {null, not null}
+	column = {negative, non-negative, above input range}
+
+<ul>
+<li>data = null and column = 2
+	<ul>
+		<li>Covers partitions 3. and 5.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
+	</ul>
+	</li>
+First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 3.123, getValue(1, 2) = 4, getValue(2, 2) = -55.009. Set column = 2
+Covers partitions 3. and 6.
+Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -47.886
+First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 2.873, getValue(1, 2) = 0, getValue(1, 1) = 67.622, getValue(2, 2) = -43.132. Set column = 2
+Covers partitions 3. and 6.
+Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -40.259
+First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
+Covers partitions 1. and 6.
+Expected output: NullPointerException thrown.
+First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123,
+getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
+Covers partitions 2. and 6.
+Expected output: NullPointerException thrown.
+First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
+	      -	Boundary condition test for “column” variable.
+	      -	Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 162.473
+ 
+ 
+ 
+ 
+calculateRowTotal(Values2D data, int row)
+Partitions Used in This:
+	data = {null, not null}
+	row = {positive number, negative number, above input range}
+ 
+data = null and row = 2
+Covers partitions 3. and 4.
+Expected output: IllegalArgumentException Thrown.
+First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(0, 0) = 8.71, getValue(0, 1) = 1, getValue(0, 2) = -22.394. Set row = 0
+Covers partitions 3. and 5.
+Expected output: Returns a double of the summation of values in row 0, resulting in a return value of -12.684.
+First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 37.17, getValue(1, 1) = 0, getValue(1, 2) = 63.193, getValue(2, 2) = -200.837. Set row = 1
+Covers partitions 3. and 5.
+Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -100.474
+First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
+Covers partitions 1. and 5.
+Expected output: NullPointerException thrown.
+First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 90.80, getValue(1, 1) = 88.320, getValue(1, 2) = 7.8123, getValue(0, 0) = 31.912, getValue(0, 1) =8.29, getValue(0, 2) = 14.289 and row = 2
+Covers partitions 2. and 6.
+Expected output: NullPointerException thrown.
+First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 36.738, getValue(1, 1) = 89.324, getValue(1, 2) = 2.145, getValue(0, 0) = 32.483, getValue(0, 1) = 19.82, getValue(0, 2) = 71.21 and row = 1
+	      -	Boundary condition test for column variable
+	      -	Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 128.207
+ 
+ 
+ 
+ 
+ 
+ 
+createNumberArray(double[] data)
+Partitions Used in This:
+	data = {null, not null}
+data = null
+Covers partition 4.
+Expected output: IllegalArgumentException thrown.
+data = [-9.1, -100.43, -99.5555]
+Covers partitions 3. and 5. (negative double input types)
+Expected output: Constructs an array of Number objects = [-9.1, -100.43, -99.5555].
+data = [123.123123123, 8.888888888]
+Covers partitions 3. and 5. (positive double input types)
+Expected output: Constructs an array of Number objects = [123.123123123, 8.888888888].
+data = [1, 2, 3, 4]
+Cover partitions 3. and 5. (integer input types)
+Expected output: Constructs an array of Number objects = [1.00, 2.00, 3.00, 4.00
+data = [20.91123123, -73.12, 7]
+Covers partitions 3. and 5. (mixed input types)
+Expected output: Constructs an array of Number objects = [20.91123123, -73.12, 7.00].
+ 
+equal(double[][] a, double[][] b)
+Partitions Used in This:
+	a = {null, numbers}
+	b = {null, numbers}
+a = null and b = null
+Cover partition 4.
+Expected output: Returns true, the arrays a and b can be null.
+a = null and b = {[0, 1, 2], [0, 1, 2]}
+Cover partitions 3. and 4.
+Expected output: Returns false.
+a = {[0, 1, 2], [3, 4, 5]} and b = {[0, 1, 2], [3, 4, 5]}
+Cover partitions 3. And 5.
+Expected output: Returns true, the values in both arrays a and b match and have the same dimensions.
+ 
+a = {[0, 1, 2], [3, 4, 5]} and b = {[3, 4, 5],[0, 1, 2]}
+Cover partitions 3. And 5.
+Expected output: Returns false, the values in both arrays a and b don’t match (reverse order).
+a = {[0, 1], [3, 4]} and b = {[0, 1], [3, 4], [NaN, NaN]}
+Cover partitions 3. and 5.
+Expected output: Returns false, the arrays a and b do not have the same dimensions.
+a = {[null, INF], [null, null]} and b = {[INF, null], [INF, INF]}
+Cover partitions 3. and 5.
+Expected output: Returns false, the arrays a and b have the same values (NaN considered equal)
+a = {[NaN, NaN]} and b = {[NaN, NaN]}
+Cover partitions 3. and 5.
+Expected output: Returns true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).
+a = {[INF, INF]} and b = {[INF, INF]}
+Cover partitions 3. and 5.
+Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).
+a = {[INF, INF], [NaN, NaN]} and b = {[INF, INF], [NaN, NaN]}
+Cover partitions 3. and 5.
+Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).
+a = {[INF, INF], [NaN, NaN]} and b = {[NaN, NaN], [INF, INF]}
+Cover partitions 3. and 5.
+Expected output: Return false, the arrays a and b do not have the same values (NaNs are considered equal and so are INFs).
+
+	</ul>
 
 
 // write down the name of the test methods and classes. Organize the based on
