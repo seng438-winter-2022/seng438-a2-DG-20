@@ -281,13 +281,13 @@ Partitions Used in This:
 <li>First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
 	<ul>
 		<li>Covers partitions 1. and 6.</li>
-		<li>Expected output: ExpectationError from JMock API..</li>
+		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123, getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
 	<ul>
 		<li>Covers partitions 2. and 6.</li>
-		<li>Expected output: ExpectationError from JMock API..</li>
+		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
@@ -329,13 +329,13 @@ Partitions Used in This:
 <li>First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
 	<ul>
 		<li>Covers partitions 1. and 5.</li>
-		<li>Expected output: NullPointerException thrown.</li>
+		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 90.80, getValue(1, 1) = 88.320, getValue(1, 2) = 7.8123, getValue(0, 0) = 31.912, getValue(0, 1) =8.29, getValue(0, 2) = 14.289 and row = 2
 	<ul>
 		<li>Covers partitions 2. and 6.</li>
-		<li>Expected output: NullPointerException thrown.</li>
+		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 36.738, getValue(1, 1) = 89.324, getValue(1, 2) = 2.145, getValue(0, 0) = 32.483, getValue(0, 1) = 19.82, getValue(0, 2) = 71.21 and row = 1
