@@ -257,7 +257,7 @@ Partitions Used in This:
 	data = {null, not null}
 	column = {negative, non-negative, above input range}
 
-<ul>
+<ol>
 <li>data = null and column = 2
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
@@ -280,7 +280,7 @@ Expected output: NullPointerException thrown.
 First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
 	      -	Boundary condition test for “column” variable.
 	      -	Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 162.473
- 
+ </ol>
  
  
  
@@ -368,7 +368,7 @@ a = {[INF, INF], [NaN, NaN]} and b = {[NaN, NaN], [INF, INF]}
 Cover partitions 3. and 5.
 Expected output: Return false, the arrays a and b do not have the same values (NaNs are considered equal and so are INFs).
 
-	</ul>
+	</ol>
 
 
 // write down the name of the test methods and classes. Organize the based on
