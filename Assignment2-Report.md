@@ -1,5 +1,5 @@
-# SENG 438 - Software Testing, Reliability, and Quality**
-# Lab. Report \#2 – Requirements-Based Test Generation**
+# SENG 438 - Software Testing, Reliability, and Quality
+# Lab. Report \#2 – Requirements-Based Test Generation
 
 | Group \#:      | 25    |
 | -------------- | --- |
@@ -219,7 +219,7 @@ Partitions Used in This:
 <li>Range = null, lowerMargin = -0.30, upperMargin = 0.10
 	<ul>
 		<li>Cover partitions 3. and 4.</li>
-		<li>Expected output: Error/Exception thrown.</li>
+		<li>Expected output: IllegalArgumentException.</li>
 	</ul>
 	</li>
 <li>Range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
