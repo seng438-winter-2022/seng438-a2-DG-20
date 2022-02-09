@@ -459,7 +459,37 @@ _clone(double [][] source)_
 
 Partitions Used in This:
 
+	source = {null, not null}
+	
 <ol>
+<li>source = null
+	<ul>
+Covers partition 4.
+Expected output: IllegalArgumentExceptionThrown
+<li>source = {[12.32, 29.48, 30.7], [91.91, 8.19, 28.29]}
+	<ul>
+		<li>Covers partition 3. and 5.</li>
+		<li>Expected output: a 2D double array, which is the exact copy of the original: {[12.32, 29.48, 30.7], [91.91, 8.19, 28.29]}.</li>
+	</ul>
+	</li>
+<li>source = {[-9.88, -9766.2, -0.1], [-0.2], [-908.123]}
+	<ul>
+		<li>Covers partition 3. and 5.</li>
+		<li>Expected output: a 2D double array, which is the exact copy of the original: {[-9.88, -9766.2, -0.1], [-0.2], [-908.123]}.</li>
+	</ul>
+	</li>
+<li>source = {[-2,3,5], [6,13,-12], [4,9,2], [7,8,9]}
+	<ul>
+		<li>Covers partitions 3. and 5.</li>
+		<li>Expected output: a 2D array, which is the exact copy of the original: {[-2,3,5], [6,13,-12], [4,9,2], [7,8,9]}.</li>
+	</ul>
+	</li>
+<li>source = {[12, 13.1, -1, 123.456456]}
+	<ul>
+		<li>Covers partitions 3. and 5.</li>
+		<li>Expected output: a 2D double array, which is the exact copy of the original: {[12, 13.1, -1, 123.456456]}.</li>
+	</ul>
+	</li>
 	
 </ol>
 
