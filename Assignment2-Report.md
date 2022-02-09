@@ -296,7 +296,7 @@ Partitions Used in This:
 	</li>
  </ol>
  
- 
+ <hr>
  
 _calculateRowTotal(Values2D data, int row)_
 
@@ -342,11 +342,9 @@ Partitions Used in This:
 		<li>Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 128.207.</li>
 	</ul>
 	</li>
- </ol>
+</ol>
  
- 
- 
- 
+<hr>
  
 _createNumberArray(double[] data)_
 
@@ -355,60 +353,110 @@ Partitions Used in This:
 	data = {null, not null}
 	
 <ol>	
-data = null
-Covers partition 4.
-Expected output: IllegalArgumentException thrown.
-data = [-9.1, -100.43, -99.5555]
-Covers partitions 3. and 5. (negative double input types)
-Expected output: Constructs an array of Number objects = [-9.1, -100.43, -99.5555].
-data = [123.123123123, 8.888888888]
-Covers partitions 3. and 5. (positive double input types)
-Expected output: Constructs an array of Number objects = [123.123123123, 8.888888888].
-data = [1, 2, 3, 4]
-Cover partitions 3. and 5. (integer input types)
-Expected output: Constructs an array of Number objects = [1.00, 2.00, 3.00, 4.00
-data = [20.91123123, -73.12, 7]
-Covers partitions 3. and 5. (mixed input types)
-Expected output: Constructs an array of Number objects = [20.91123123, -73.12, 7.00].
+<li>data = null
+	<ul>
+		<li>Covers partition 4.</li>
+		<li>Expected output: IllegalArgumentException thrown.</li>
+	</ul>
+	</li>
+<li>data = [-9.1, -100.43, -99.5555]
+	<ul>
+		<li>Covers partitions 3. and 5. (negative double input types).</li>
+		<li>Expected output: Constructs an array of Number objects = [-9.1, -100.43, -99.5555].</li>
+	</ul>
+	</li>
+<li>data = [123.123123123, 8.888888888]
+	<ul>
+		<li>Covers partitions 3. and 5. (positive double input types).</li>
+		<li>Expected output: Constructs an array of Number objects = [123.123123123, 8.888888888].</li>
+	</ul>
+	</li>
+<li>data = [1, 2, 3, 4]
+	<ul>
+		<li>Cover partitions 3. and 5. (integer input types).</li>
+		<li>Expected output: Constructs an array of Number objects = [1.00, 2.00, 3.00, 4.00].</li>
+	</ul>
+	</li>
+<li>data = [20.91123123, -73.12, 7]
+	<ul>
+		<li>Covers partitions 3. and 5. (mixed input types).</li>
+		<li>Expected output: Constructs an array of Number objects = [20.91123123, -73.12, 7.00].</li>
+	</ul>
+	</li>
+</ol>
+
+<hr>
  
-equal(double[][] a, double[][] b)
+_equal(double[][] a, double[][] b)_
+
 Partitions Used in This:
+
 	a = {null, numbers}
 	b = {null, numbers}
-a = null and b = null
-Cover partition 4.
-Expected output: Returns true, the arrays a and b can be null.
-a = null and b = {[0, 1, 2], [0, 1, 2]}
-Cover partitions 3. and 4.
-Expected output: Returns false.
-a = {[0, 1, 2], [3, 4, 5]} and b = {[0, 1, 2], [3, 4, 5]}
-Cover partitions 3. And 5.
-Expected output: Returns true, the values in both arrays a and b match and have the same dimensions.
- 
-a = {[0, 1, 2], [3, 4, 5]} and b = {[3, 4, 5],[0, 1, 2]}
-Cover partitions 3. And 5.
-Expected output: Returns false, the values in both arrays a and b don’t match (reverse order).
-a = {[0, 1], [3, 4]} and b = {[0, 1], [3, 4], [NaN, NaN]}
-Cover partitions 3. and 5.
-Expected output: Returns false, the arrays a and b do not have the same dimensions.
-a = {[null, INF], [null, null]} and b = {[INF, null], [INF, INF]}
-Cover partitions 3. and 5.
-Expected output: Returns false, the arrays a and b have the same values (NaN considered equal)
-a = {[NaN, NaN]} and b = {[NaN, NaN]}
-Cover partitions 3. and 5.
-Expected output: Returns true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).
-a = {[INF, INF]} and b = {[INF, INF]}
-Cover partitions 3. and 5.
-Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).
-a = {[INF, INF], [NaN, NaN]} and b = {[INF, INF], [NaN, NaN]}
-Cover partitions 3. and 5.
-Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).
-a = {[INF, INF], [NaN, NaN]} and b = {[NaN, NaN], [INF, INF]}
-Cover partitions 3. and 5.
-Expected output: Return false, the arrays a and b do not have the same values (NaNs are considered equal and so are INFs).
+	
+<li>a = null and b = null
+	<ul>
+		<li>Cover partition 4.</li>
+		<li>Expected output: Returns true, the arrays a and b can be null.</li>
+	</ul>
+	</li>
+<li>a = null and b = {[0, 1, 2], [0, 1, 2]}
+	<ul>
+		<li>Cover partitions 3. and 4.</li>
+		<li>Expected output: Returns false.</li>
+	</ul>
+	</li>
+<li>a = {[0, 1, 2], [3, 4, 5]} and b = {[0, 1, 2], [3, 4, 5]}
+	<ul>
+		<li>Cover partitions 3. And 5.</li>
+		<li>Expected output: Returns true, the values in both arrays a and b match and have the same dimensions.</li>
+	</ul>
+	</li>
+<li>a = {[0, 1, 2], [3, 4, 5]} and b = {[3, 4, 5],[0, 1, 2]}
+	<ul>
+		<li>Cover partitions 3. And 5.</li>
+		<li>Expected output: Returns false, the values in both arrays a and b don’t match (reverse order).</li>
+	</ul>
+	</li>
+<li>a = {[0, 1], [3, 4]} and b = {[0, 1], [3, 4], [NaN, NaN]}
+	<ul>
+		<li>Cover partitions 3. and 5.</li>
+		<li>Expected output: Returns false, the arrays a and b do not have the same dimensions.</li>
+	</ul>
+	</li>
+<li>a = {[null, INF], [null, null]} and b = {[INF, null], [INF, INF]}
+	<ul>
+		<li>Cover partitions 3. and 5.</li>
+		<li>Expected output: Returns false, the arrays a and b have the same values (NaN considered equal).</li>
+	</ul>
+	</li>
+<li>a = {[NaN, NaN]} and b = {[NaN, NaN]}
+	<ul>
+		<li>Cover partitions 3. and 5.</li>
+		<li>Expected output: Returns true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).</li>
+	</ul>
+	</li>
+<li>a = {[INF, INF]} and b = {[INF, INF]}
+	<ul>
+		<li>Cover partitions 3. and 5.</li>
+		<li>Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).</li>
+	</ul>
+	</li>
+<li>a = {[INF, INF], [NaN, NaN]} and b = {[INF, INF], [NaN, NaN]}
+	<ul>
+		<li>Cover partitions 3. and 5.</li>
+		<li>Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).</li>
+	</ul>
+	</li>
+<li>a = {[INF, INF], [NaN, NaN]} and b = {[NaN, NaN], [INF, INF]}
+	<ul>
+		<li>Cover partitions 3. and 5.</li>
+		<li>Expected output: Return false, the arrays a and b do not have the same values (NaNs are considered equal and so are INFs).</li>
+	</ul>
+	</li>
+</ol>
 
-	</ol>
-
+<hr>
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
