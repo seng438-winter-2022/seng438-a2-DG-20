@@ -93,35 +93,35 @@ Partitions Used in This:
 	factor = {negative, non-negative}
 
 <ol> 
-<li>1. base = null and factor = -5.345
+<li>base = null and factor = -5.345
 	<ul>
 		<li>Covers partitions 1. and 4.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
-<li>2. base = Range(-2.25, 100) and factor = -5.123
+<li>base = Range(-2.25, 100) and factor = -5.123
 	<ul>
 		<li>Covers partitions 1. and 5.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
-<li>3. base = null and factor = 1000
+<li>base = null and factor = 1000
 	<ul>
 		<li>Covers partitions 3. and 4.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
-<li>4. base = Range(-2.25, 100) and factor = 2.34
+<li>base = Range(-2.25, 100) and factor = 2.34
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = -5.265 and object.getUpperBound() = 234.00.</li>
 	</ul>
 	</li>
 
-<li>5. base = Range(-2.25, 100) and factor = 0
+<li>base = Range(-2.25, 100) and factor = 0
 	<ul>
 		<li>Boundary condition test for factor variable.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = 0.0 and object.getUpperBound() = 0.0.</li>
