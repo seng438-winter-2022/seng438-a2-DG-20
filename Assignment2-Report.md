@@ -464,8 +464,10 @@ Partitions Used in This:
 <ol>
 <li>source = null
 	<ul>
-Covers partition 4.
-Expected output: IllegalArgumentExceptionThrown
+		<li>Covers partition 4.</li>
+		<li>Expected output: IllegalArgumentExceptionThrown.</li>	
+	</ul>
+	</li>
 <li>source = {[12.32, 29.48, 30.7], [91.91, 8.19, 28.29]}
 	<ul>
 		<li>Covers partition 3. and 5.</li>
