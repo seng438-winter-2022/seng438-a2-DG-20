@@ -65,6 +65,11 @@ public class DataUtilitiesTest extends DataUtilities {
     double [][] equalINFAndNaNMismatchA;
     double [][] equalINFAndNaNMismatchB;
 
+    double [][] clonePositiveDoubles;
+    double [][] cloneNegativeDoubles;
+    double [][] cloneInts;
+    double [][] cloneMixed;
+
   // Before the test cases below begin running, setting the Mock objects by initializing them  
 	@Before
     public void setUp() throws Exception { 
@@ -278,6 +283,12 @@ public class DataUtilitiesTest extends DataUtilities {
 	    equalINFAndNaNMatchB = new double[][] {{Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY}, {Double.NaN, Double.NaN}};
 	    equalINFAndNaNMismatchA = new double[][] {{Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY}, {Double.NaN, Double.NaN}};
 	    equalINFAndNaNMismatchB = new double[][] {{Double.NaN, Double.NaN}, {Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY}};
+
+      // clone() initialization for testing
+      clonePositiveDoubles = new double[][]{{12.32, 29.48, 30.7}, {91.91, 8.19, 28.29}};
+      cloneNegativeDoubles = new double[][]{{-9.88, -9766.2, -0.1}, {-0.2}, {-908.123}};
+      cloneInts = new double[][]{{-2, 3, 5}, {6, 13, -12}, {4, 9, 2}, {7, 8, 9}};
+      cloneMixed = new double[][]{{12, 13.1, -1, 123.456456}};
     }
 
    // Tests for the calculateColumnTotal()
@@ -425,7 +436,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(true, returnVal);
   }
   
-  // Tests for a null double array for "a" and a 2 element 2 level double array for "b" which should return false that matches the expected boolean value
+  // Tests for a null double 2D array for "a" and a 2 element 2 level double array for "b" which should return false that matches the expected boolean value
   @Test
   public void equalNullAndValidTest()
   {
@@ -433,7 +444,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(false, returnVal);
   }
   
-  // Tests for a 2 element 2 level double array for "a" and an identical array for "b" which should return true that matches the expected boolean value
+  // Tests for a 2 element per level 2D double array for "a" and an identical array for "b" which should return true that matches the expected boolean value
   @Test
   public void equalNumbersMatchTest()
   {
@@ -441,7 +452,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(true, returnVal);
   }
 
-  // Tests for a 2 element 2 level double array for "a" and a reversed array for "b" which should return false that matches the expected boolean value
+  // Tests for a 2 element per level 2D double array for "a" and a reversed array for "b" which should return false that matches the expected boolean value
   @Test
   public void equalNumbersWrongOrderTest()
   {
@@ -449,7 +460,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(false, returnVal);
   }
 
-  // Tests for a 2 element 2 level double array for "a" and a 3 element 2 level double array for "b" including NaN, which should return false that matches the expected boolean value 
+  // Tests for a 2 element per level 2D double array for "a" and a 3 element 2 level double array for "b" including NaN, which should return false that matches the expected boolean value 
   @Test
   public void equalNumbersDifferentDimensionsTest()
   {
@@ -457,7 +468,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(false, returnVal);
   }
   
-  // Tests for a 2 element 2 level double array for "a" containing NaN and an identical array for "b" which sould return true that matches the expected boolean value
+  // Tests for a 2 element per level 2D double array for "a" containing NaN and an identical array for "b" which sould return true that matches the expected boolean value
   @Test
   public void equalNaNMatchTest()
   {
@@ -465,7 +476,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(true, returnVal);
   }
 
-  // Tests for a 2 element 2 level double array for "a" containing INF and an identical array for "b" which should return true that matches the expected boolean value
+  // Tests for a 2 element per level 2D double array for "a" containing INF and an identical array for "b" which should return true that matches the expected boolean value
   @Test
   public void equalINFMatchTest()
   {
@@ -473,7 +484,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(true, returnVal);
   }
 
-  // Tests for a 4 element 2 level double array for "a" containing combinations of INF and NaN and an idenctical array for "b" which should return true that matches the expected boolean value
+  // Tests for a 4 element per level 2D double array for "a" containing combinations of INF and NaN and an idenctical array for "b" which should return true that matches the expected boolean value
   @Test
   public void equalINFAndNaNMatchTest()
   {
@@ -481,11 +492,56 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(true, returnVal);
   }
 
-  // Tests for a 4 element 2 level double array for "a" containing combinations of INF and NaN and a reversed array for "b" which should return false that matches the expected boolean value 
+  // Tests for a 4 element per level 2D double array for "a" containing combinations of INF and NaN and a reversed array for "b" which should return false that matches the expected boolean value 
   @Test
   public void equalINFAndNaNMismatchTest()
   {
     boolean returnVal = DataUtilities.equal(equalINFAndNaNMismatchA, equalINFAndNaNMismatchB);
     assertEquals(false, returnVal);
+  }
+  
+  // Tests for the clone(double[][] source)
+  
+  // Tests for a null 2D double array "source" which causes a IllegalArgumentException to be thrown
+  @Test(expected = IllegalArgumentException.class)
+  public void cloneNullTest()
+  {
+    double [][] returnVal = DataUtilities.clone(null2DArrayA);  
+  }
+
+  // Tests for a positive 2D double array "source" which should return a array that matches the expected array
+  @Test
+  public void clonePositiveDoublesTest()
+  {
+    double [][] returnVal = DataUtilities.clone(clonePositiveDoubles);
+    double [][] expectedVal = new double[][]{{12.32, 29.48, 30.7}, {91.91, 8.19, 28.29}};
+    assertArrayEquals(expectedVal, returnVal);
+  }
+
+  // Tests for a negative 2D double array "source" which should return a array that matches the expected array
+  @Test
+  public void cloneNegativeDoublesTest()
+  {
+    double [][] returnVal = DataUtilities.clone(cloneNegativeDoubles);
+    double [][] expectedVal = new double[][]{{-9.88, -9766.2, -0.1}, {-0.2}, {-908.123}};
+    assertArrayEquals(expectedVal, returnVal);
+  }
+  
+  // Tests for a integer 2D double array "source" which should return a array that matches the expected array
+  @Test
+  public void cloneIntegersTest()
+  {
+    double [][] returnVal = DataUtilities.clone(cloneInts);
+    double [][] expectedVal = new double[][]{{-2, 3, 5}, {6, 13, -12}, {4, 9, 2}, {7, 8, 9}};
+    assertArrayEquals(expectedVal, returnVal);
+  }
+  
+  // Tests for a mixed 2D double array "source" which should return a array that matches the expected array
+  @Test
+  public void cloneMixedTest()
+  {
+    double [][] returnVal = DataUtilities.clone(cloneMixed);
+    double [][] expectedVal = new double[][]{{12, 13.1, -1, 123.456456}};
+    assertArrayEquals(expectedVal, returnVal);
   }
 }
