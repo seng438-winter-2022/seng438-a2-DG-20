@@ -92,7 +92,7 @@ Partitions Used in This:
 	base = {null, not null}
 	factor = {negative, non-negative}
 
-<ul> 
+<ol> 
 <li>1. base = null and factor = -5.345
 	<ul>
 		<li>Covers partitions 1. and 4.</li>
@@ -127,7 +127,7 @@ Partitions Used in This:
 		<li>Expected output: Range object, where object.getLowerBound() = 0.0 and object.getUpperBound() = 0.0.</li>
 	</ul>
 	</li>
-</ul>
+</ol>
 
 <hr>
 
@@ -139,7 +139,7 @@ Partitions Used in This:
 	delta = {any number}
 	allowZeroCrossing = {true, false}
 
-<ul>
+<ol>
 <li>base = null, delta = -4.2325, allowZeroCrossing = true
 	<ul>
 		<li>Covers partitions 3., 4., 6.</li>
@@ -168,7 +168,7 @@ Partitions Used in This:
 <li>Expected output: Range object, where object.getLowerBound() = -50.35 and object.getUpperBound() = 100.70.</li>
 	</ul>
 	</li>
-</ul>
+</ol>
 
 <hr>
  
@@ -176,7 +176,7 @@ _getCentralValue():_
 
 No partitions used in this (no inputs).
 
-<ul>
+<ol>
 <li>Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
 	<ul>
 		<li>Expected output: 50.5</li>
@@ -197,7 +197,7 @@ No partitions used in this (no inputs).
 		<li>Expected output: NullPointerException thrown</li>
 	</ul>
 	</li>
-	</ul>
+	</ol>
 
 <hr>
 
@@ -209,7 +209,7 @@ Partitions Used in This:
 	lowerMargin = {any number}
 	upperMargin = {any number}
 	
-<ul>
+<ol>
 <li>Range = Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
@@ -228,7 +228,7 @@ Partitions Used in This:
 		<li>Expected output: Range object, where object.getLowerBound() = -2.0 and object.getUpperBound() = 99.99.</li>
 	</ul>
 	</li>
-</ul>
+</ol>
 
 <hr>
  
@@ -236,7 +236,7 @@ _toString():_
 
 No partitions used in this (no inputs).
 
-<ul> 
+<ol> 
 <li>Create a Range object with lower = -12.0 and upper = 100.00 and call toString() on it.
 	<ul>
 		<li>Expected output: "Range[-12.0,100.0]".</li>
@@ -247,7 +247,7 @@ No partitions used in this (no inputs).
 		<li>Expected output: NullPointerException thrown.</li>
 	</ul>
 	</li>
-	</ul>
+	</ol>
 
 ### DataUtilities
 
