@@ -264,16 +264,25 @@ Partitions Used in This:
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
-First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 3.123, getValue(1, 2) = 4, getValue(2, 2) = -55.009. Set column = 2
-Covers partitions 3. and 6.
-Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -47.886
-First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 2.873, getValue(1, 2) = 0, getValue(1, 1) = 67.622, getValue(2, 2) = -43.132. Set column = 2
-Covers partitions 3. and 6.
-Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -40.259
-First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
-Covers partitions 1. and 6.
-Expected output: NullPointerException thrown.
-First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123,
+<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 3.123, getValue(1, 2) = 4, getValue(2, 2) = -55.009. Set column = 2
+	<ul>
+		<li>Covers partitions 3. and 6.
+		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -47.886
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 2.873, getValue(1, 2) = 0, getValue(1, 1) = 67.622, getValue(2, 2) = -43.132. Set column = 2
+	<ul>
+		<li>Covers partitions 3. and 6.
+		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -40.259
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
+	<ul>
+		<li>Covers partitions 1. and 6.
+		<li>Expected output: NullPointerException thrown.
+	</ul>
+	</li>
+<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123,
 getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
 Covers partitions 2. and 6.
 Expected output: NullPointerException thrown.
