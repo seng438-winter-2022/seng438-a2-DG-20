@@ -323,7 +323,7 @@ Partitions Used in This:
 <li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 37.17, getValue(1, 1) = 0, getValue(1, 2) = 63.193, getValue(2, 2) = -200.837. Set row = 1
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
-		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -100.474.</li>
+		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of 100.363.</li>
 	</ul>
 	</li>
 <li>First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
