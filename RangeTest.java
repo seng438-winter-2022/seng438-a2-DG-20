@@ -1,78 +1,78 @@
+/*
+ * Course: SENG 438
+ * Assignment: 2
+ * Team Members: Curtis Silva, Divyansh Goyal, Gurpartap Sohi, Liam Parmar
+ */
 package org.jfree.data.test;
 
+// Import statements.
 import static org.junit.Assert.*; 
 import org.jfree.data.Range; 
 import org.junit.*;
 
+// Creating a class for the RangeTest test cases.
 public class RangeTest {
+	// Declaring Range objects for testing purposes.
 	private Range generalRange;
     private Range nullRange;
     private Range scaleRange;
     private Range shiftRangeTrueCrossing;
     private Range shiftRangeFalseCrossing;
     private Range shiftRangeBoundary;
-    private Range centralValueTester;
+    private Range centralValueTesterPositive;
+    private Range centralValueTesterNegative;
+    private Range centralValueTesterZero;
     private Range expandValidTester;
     private Range expandMarginBoundary;
     private Range toStringValidTester;
 
+    // Before the test cases below begin running, setting the private Range objects by initializing them or setting them to null.
     @Before
     public void setUp() throws Exception { 
+    	// General-purpose Range objects.
     	nullRange = null;
     	generalRange = new Range(0, 100);
     	
+    	// Range objects for scale method test.
     	scaleRange = new Range(-2.25, 100);
     	
+    	// Range objects for shift method tests.
     	shiftRangeTrueCrossing = new Range(-11.0, 10072.0);
     	shiftRangeFalseCrossing = new Range(3.5, 89.0);
     	shiftRangeBoundary = new Range(-50.35, 100.70);
     	
-    	centralValueTester = new Range(1.0, 100.00);
+    	// Range objects for centralValue method tests.
+    	centralValueTesterPositive = new Range(1.0, 100.00);
+    	centralValueTesterNegative = new Range(-100.00, -8.00);
+    	centralValueTesterZero = new Range(-20.0, 20.0);
     	
+    	// Range objects for expand method tests.
     	expandValidTester = new Range(0.0, 14.0);
     	expandMarginBoundary = new Range(-2.0, 99.99);
     	
-    	toStringValidTester = new Range(1.0, 200.0);
+    	// Range objects for toString method test.
+    	toStringValidTester = new Range(-12.0, 200.0);
     }
 
 
-    @Test
+    // Tests for the scale() method.
+    
+    @Test(expected = IllegalArgumentException.class)
     public void scaleNullRangeNegativeFactor() throws Exception 
     {
-    	try
-    	{
-    		Range returnObj = generalRange.scale(nullRange, -5.345);
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.IllegalArgumentException", e.getClass().getName().toString());
-    	}
+    	Range returnObj = generalRange.scale(nullRange, -5.345);
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void scaleValidRangeNegativeFactor() throws Exception
     {
-    	try
-    	{
-    		Range returnObj = generalRange.scale(scaleRange, -5.123);
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.IllegalArgumentException", e.getClass().getName().toString());
-    	}
+    	Range returnObj = generalRange.scale(scaleRange, -5.123);
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void scaleNullRangeValidFactor() throws Exception
     {
-    	try
-    	{
-    		Range returnObj = generalRange.scale(nullRange, 1000);
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.IllegalArgumentException", e.getClass().getName().toString());
-    	}
+    	Range returnObj = generalRange.scale(nullRange, 1000);
     }
 
     @Test
@@ -91,30 +91,18 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
-    @Test
+    
+    
+    @Test(expected = IllegalArgumentException.class)
     public void shiftNullRangeTrueZeroCrossing() throws Exception
     {
-    	try
-    	{
-    		Range returnObj = generalRange.shift(nullRange, -4.2325, true);
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.IllegalArgumentException", e.getClass().getName().toString());
-    	}
+    	Range returnObj = generalRange.shift(nullRange, -4.2325, true);
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void shiftNullRangeFalseZeroCrossing() throws Exception
     {
-    	try
-    	{
-    		Range returnObj = generalRange.shift(nullRange, -4.2325, false);
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.IllegalArgumentException", e.getClass().getName().toString());
-    	}
+    	Range returnObj = generalRange.shift(nullRange, 500000, false);
     }
     
     @Test
@@ -141,26 +129,39 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    
+    
     @Test
-    public void getCentralValueValidRange()
+    public void getPositiveCentralValueValidRange()
     {
     	double expected = 50.5;
-    	double actual = centralValueTester.getCentralValue();
+    	double actual = centralValueTesterPositive.getCentralValue();
     	assert(expected == actual);
     }
     
     @Test
+    public void getNegativeCentralValueValidRange()
+    {
+    	double expected = -54.00;
+    	double actual = centralValueTesterNegative.getCentralValue();
+    	assert(expected == actual);
+    }
+    
+    @Test
+    public void getZeroCentralValueValidRange()
+    {
+    	double expected = 0.00;
+    	double actual = centralValueTesterZero.getCentralValue();
+    	assert(expected == actual);
+    }
+    
+    @Test(expected = NullPointerException.class)
     public void getCentralValueNullRange()
     {
-    	try
-    	{
-    		double actual = nullRange.getCentralValue();
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.NullPointerException", e.getClass().getName().toString());
-    	}
+    	double actual = nullRange.getCentralValue();
     }
+    
+    
     
     @Test
     public void expandValidMargins()
@@ -173,17 +174,10 @@ public class RangeTest {
     	assertEquals(expectedObj, actualObj);
     }
     
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void expandNullRange()
     {
-    	try
-    	{
-    		Range returnObj = Range.expand(nullRange, -0.30, 0.10);
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.IllegalArgumentException", e.getClass().getName().toString());
-    	}
+    	Range returnObj = Range.expand(nullRange, -0.30, 0.10);
     }
     
     @Test
@@ -194,24 +188,19 @@ public class RangeTest {
     	assertEquals(expectedObj, returnObj);
     }
     
+    
+    
     @Test
     public void toStringValidRange()
     {
     	String actualMessage = toStringValidTester.toString();
-    	String expectedMessage = "Range[1.0,200.0]";
+    	String expectedMessage = "Range[-12.0,200.0]";
     	assertEquals(expectedMessage, actualMessage);
     }
     
-    @Test
+    @Test(expected = NullPointerException.class)
     public void toStringNullRange() throws Exception
     {
-    	try
-    	{
-    		String actualMessage = nullRange.toString();
-    	}
-    	catch (Exception e)
-    	{
-    		assertEquals("java.lang.NullPointerException", e.getClass().getName().toString());
-    	}
+    	String actualMessage = nullRange.toString();
     }
 }
