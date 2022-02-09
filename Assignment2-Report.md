@@ -210,19 +210,19 @@ Partitions Used in This:
 	upperMargin = {any number}
 	
 <ol>
-<li>Range = Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
+<li>range = Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = 1.4 and object.getUpperBound() = 56.0.</li>
 	</ul>
 	</li>
-<li>Range = null, lowerMargin = -0.30, upperMargin = 0.10
+<li>range = null, lowerMargin = -0.30, upperMargin = 0.10
 	<ul>
 		<li>Cover partitions 3. and 4.</li>
 		<li>Expected output: IllegalArgumentException.</li>
 	</ul>
 	</li>
-<li>Range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
+<li>range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
 	<ul>
 		<li>Boundary condition test for lowerMargin and upperMargin variables.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = -2.0 and object.getUpperBound() = 99.99.</li>
