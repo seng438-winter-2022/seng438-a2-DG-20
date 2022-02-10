@@ -13,6 +13,7 @@ import org.jfree.data.Range;
 import org.jfree.data.Values2D;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -329,12 +330,12 @@ public class DataUtilitiesTest extends DataUtilities {
 		 double returnVal = DataUtilities.calculateColumnTotal(valuesCalculateColumnTotalOverAcceptableCol, 2);
 	 }
 	 
-   // Tests for a boundary condition where column is 1 and the max column is also 1 whcih should return a summation that matches the expected summation
+   // Tests for a boundary condition where column is 1 and the max column is also 1 which should return a summation that matches the expected summation
 	 @Test
 	 public void calculateColumnTotalBoundaryTest()
 	 {
 		 double returnVal = DataUtilities.calculateColumnTotal(valuesCalculateColumnTotalBoundary, 1);
-     assertEquals(162.473, returnVal, .000000001d);
+		 assertEquals(162.473, returnVal, .000000001d);
 	 }
    
    // Tests for the calculateRowTotal()
@@ -375,7 +376,7 @@ public class DataUtilitiesTest extends DataUtilities {
 		 double returnVal = DataUtilities.calculateRowTotal(valuesCalculaterowTotalOverAcceptableCol, 2);
 	 }
 	 
-   // Tests for a boundary condition where row is 1 and the max row is also 1 whcih should return a summation that matches the expected summation
+   // Tests for a boundary condition where row is 1 and the max row is also 1 which should return a summation that matches the expected summation
 	 @Test
 	 public void calculateRowTotalBoundaryTest()
 	 {
@@ -468,7 +469,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(false, returnVal);
   }
   
-  // Tests for a 2 element per level 2D double array for "a" containing NaN and an identical array for "b" which sould return true that matches the expected boolean value
+  // Tests for a 2 element per level 2D double array for "a" containing NaN and an identical array for "b" which should return true that matches the expected boolean value
   @Test
   public void equalNaNMatchTest()
   {
@@ -484,7 +485,7 @@ public class DataUtilitiesTest extends DataUtilities {
     assertEquals(true, returnVal);
   }
 
-  // Tests for a 4 element per level 2D double array for "a" containing combinations of INF and NaN and an idenctical array for "b" which should return true that matches the expected boolean value
+  // Tests for a 4 element per level 2D double array for "a" containing combinations of INF and NaN and an identical array for "b" which should return true that matches the expected boolean value
   @Test
   public void equalINFAndNaNMatchTest()
   {
@@ -543,5 +544,12 @@ public class DataUtilitiesTest extends DataUtilities {
     double [][] returnVal = DataUtilities.clone(cloneMixed);
     double [][] expectedVal = new double[][]{{12, 13.1, -1, 123.456456}};
     assertArrayEquals(expectedVal, returnVal);
+  }
+  
+  //Tear-down is not needed for these tests.
+  @After
+  public void tearDown()
+  {
+  	
   }
 }
