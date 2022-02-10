@@ -93,35 +93,35 @@ Partitions Used in This:
 	factor = {negative, non-negative}
 
 <ol> 
-	<li> base = null and factor = -5.345
+	<li>scaleNullRangeNegativeFactorTest: base = null and factor = -5.345
 	<ul>
 		<li>Covers partitions 1. and 4.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
-<li>base = Range(-2.25, 100) and factor = -5.123
+<li>scaleNullRangeNegativeFactorTest: base = Range(-2.25, 100) and factor = -5.123
 	<ul>
 		<li>Covers partitions 1. and 5.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
-<li>base = null and factor = 1000
+<li>scaleNullRangeValidFactorTest: base = null and factor = 1000
 	<ul>
 		<li>Covers partitions 3. and 4.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
 
-<li>base = Range(-2.25, 100) and factor = 2.34
+<li>scaleValidRangeValidFactorTest: base = Range(-2.25, 100) and factor = 2.34
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = -5.265 and object.getUpperBound() = 234.00.</li>
 	</ul>
 	</li>
 
-<li>base = Range(-2.25, 100) and factor = 0
+<li>scaleFactorZeroTest: base = Range(-2.25, 100) and factor = 0
 	<ul>
 		<li>Boundary condition test for factor variable.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = 0.0 and object.getUpperBound() = 0.0.</li>
@@ -140,29 +140,29 @@ Partitions Used in This:
 	allowZeroCrossing = {true, false}
 
 <ol>
-<li>base = null, delta = -4.2325, allowZeroCrossing = true
+<li>shiftNullRangeTrueZeroCrossingTest: base = null, delta = -4.2325, allowZeroCrossing = true
 	<ul>
 		<li>Covers partitions 3., 4., 6.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
-<li>base = null, delta = 500000.0, allowZeroCrossing = false
+<li>shiftNullRangeFalseZeroCrossingTest: base = null, delta = 500000.0, allowZeroCrossing = false
 	<ul>
 		<li>Covers partitions 3., 4., 7.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
-<li>base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
+<li>shiftValidRangeTrueZeroCrossingTest: base = Range(-11.0, 10072.0) delta = 500000.0, allowZeroCrossing = true
 	<ul>
 		<li>Cover partitions 3., 5., 7.</li>
-<li>Expected output: Range object, where object.getLowerBound() = 499989.0 and object.getUpperBound() = 510072.0.</li>
+		<li>Expected output: Range object, where object.getLowerBound() = 499989.0 and object.getUpperBound() = 510072.0.</li>
 	</ul>
-<li>base = Range(3.5, 89.0), delta = -4.2325, allowZeroCrossing = false
+<li>shiftValidRangeFalseZeroCrossingTest: base = Range(3.5, 89.0), delta = -4.2325, allowZeroCrossing = false
 	<ul>
 		<li>Cover partitions 3., 5., 6.</li>
 <li>Expected output: Range object, where object.getLowerBound() = 0.00 and object.getUpperBound() = 84.7675.</li>
 	</ul>
-<li>base = Range(-50.35, 100.70), delta = 0.0, allowZeroCrossing = true
+<li>shiftDeltaZeroTest: base = Range(-50.35, 100.70), delta = 0.0, allowZeroCrossing = true
 	<ul>
 		<li>Boundary condition test for delta variable.</li>
 <li>Expected output: Range object, where object.getLowerBound() = -50.35 and object.getUpperBound() = 100.70.</li>
@@ -177,22 +177,22 @@ _getCentralValue():_
 No partitions used in this (no inputs).
 
 <ol>
-<li>Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
+<li>getPositiveCentralValueValidRangeTest: Create a Range object with lower = 1.0 and upper = 100.00 and call getCentralValue() on it.
 	<ul>
 		<li>Expected output: 50.5</li>
 	</ul>
 	</li>
-<li>Create a Range object with lower = -100.0 and upper = -8.00 and call getCentralValue() on it.
+<li>getNegativeCentralValueValidRangeTest: Create a Range object with lower = -100.0 and upper = -8.00 and call getCentralValue() on it.
 	<ul>
 		<li>Expected output: -54.00</li>
 	</ul>
 	</li>
-<li>Create a Range object with lower = -20.00 and upper = -20.00 and call getCentralValue() on it.
+<li>getZeroCentralValueValidRangeTest: Create a Range object with lower = -20.00 and upper = -20.00 and call getCentralValue() on it.
 	<ul>
 		<li>Expected output: 0.00</li>
 	</ul>
 	</li>
-<li>Create a null Range object and call getCentralValue() on it.
+<li>getCentralValueNullRangeTest: Create a null Range object and call getCentralValue() on it.
 	<ul>
 		<li>Expected output: NullPointerException thrown</li>
 	</ul>
@@ -210,19 +210,19 @@ Partitions Used in This:
 	upperMargin = {any number}
 	
 <ol>
-<li>range = Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
+<li>expandValidMarginsTest: range = Range(0.0, 14.0), lowerMargin = -0.10, upperMargin = 3.00
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = 1.4 and object.getUpperBound() = 56.0.</li>
 	</ul>
 	</li>
-<li>range = null, lowerMargin = -0.30, upperMargin = 0.10
+<li>expandNullRangeTest: range = null, lowerMargin = -0.30, upperMargin = 0.10
 	<ul>
 		<li>Cover partitions 3. and 4.</li>
 		<li>Expected output: IllegalArgumentException.</li>
 	</ul>
 	</li>
-<li>range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
+<li>expandZeroMarginsTest: range = Range(-2.0, 99.99), lowerMargin = 0.00, upperMargin = 0.00
 	<ul>
 		<li>Boundary condition test for lowerMargin and upperMargin variables.</li>
 		<li>Expected output: Range object, where object.getLowerBound() = -2.0 and object.getUpperBound() = 99.99.</li>
@@ -237,12 +237,12 @@ _toString():_
 No partitions used in this (no inputs).
 
 <ol> 
-<li>Create a Range object with lower = -12.0 and upper = 100.00 and call toString() on it.
+<li>toStringValidRangeTest: Create a Range object with lower = -12.0 and upper = 100.00 and call toString() on it.
 	<ul>
 		<li>Expected output: "Range[-12.0,100.0]".</li>
 	</ul>
 	</li>
-<li>Create a null Range object call toString() on it.
+<li>toStringNullRangeTest: Create a null Range object call toString() on it.
 	<ul>
 		<li>Expected output: NullPointerException thrown.</li>
 	</ul>
