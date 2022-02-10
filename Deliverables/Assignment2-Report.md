@@ -25,7 +25,7 @@
 * [3.1 Range](#range)
 * [3.2 DataUtilities](#datautilities)
 
-[4 Division of Effort and Lessons Learned From Teamwork](#division_of_effort_and_lessons_learned_from_teamwork)
+[4 Division of Effort and Lessons Learned From Teamwork](#division-of-effort-and-lessons-learned-from-teamwork)
 
 [5 Pair Testing Management and Division of Responsibilities](#pair-testing-management-and-division-of-responsibilities)
 
