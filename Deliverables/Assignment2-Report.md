@@ -29,13 +29,13 @@
 
 [5 Difficulties Encountered, Challenges Overcome, and Lessons Learned](#difficulties-encountered-challenges-overcome-and-lessons-learned)
 
-[8 Comments and Feedback on The Lab Assignment](#comments-and-feedback-on-the-lab-assignment)
+[6 Comments and Feedback on The Lab Assignment](#comments-and-feedback-on-the-lab-assignment)
 
 <hr>
 
 ## Introduction
 
-Text…
+This assignment intends to provide students a generalized overview of the fundamentals of automated unit testing based on the requirements of each unit. In order to develop automated test code in JUnit, students are required to devise a high level plan to test functionality of the methods in the Range and DataUtilities classes, and document and report these tests. Furthermore, students will explore and work with mock objects in the test-code development stages.
 
 <hr>
 
@@ -499,12 +499,12 @@ Partitions Used in This:
 
 # Division of Effort and Lessons Learned From Teamwork
 
-The team work was divided among the two pairs and we implemented peer programming where one student piloted the writing of the code while the other communicated the created test cases and oversaw the writing of the code. One pair focused on creating test cases on paper for the Range class, whereas the other pair focused on creating test cases on paper for the DataUtilities class. Once the test cases were created, the group came together and developed the code for the tests simultaneously using Replit. The general formatting of the test cases were thought of as a group along with the splitting of each test into general partitions. The lessons learned from the teamwork in this lab were the importance of having an organized approach to developing test cases to be more efficient as a group. Furthermore, this lab allowed us to utilize peer programming in an efficient way, partnered with simultaneous group programming to complete the coding in the least amount of time possible.
+The team work was divided among the two pairs and the group decided to implement peer programming where one student piloted the writing of the code while the other communicated the created test cases and oversaw the writing of the code. One pair focused on creating test cases on paper for the Range class, whereas the other pair focused on creating test cases on paper for the DataUtilities class. Once the test cases were created, the group came together and developed the code for the tests simultaneously using Replit. The general formatting of the test cases were thought of as a group along with the splitting of each test into general partitions. The lessons learned from the teamwork in this lab were the importance of having an organized approach to developing test cases to be more efficient as a group. Furthermore, this lab allowed us to utilize peer programming in an efficient way, partnered with simultaneous group programming to complete the coding in the least amount of time possible. 
 
 # Difficulties Encountered, Challenges Overcome, and Lessons Learned
 
-Text…
+Difficulties encountered in this lab were the clarity in the designing of test cases. None of the team members had much experience in the designing of test cases and since the group couldn’t look at the source code the group had to make interpretations about each function. The setup of all the mock objects, specifically the DataUtilities class, took a long time as many mock objects needed to be implemented, especially since this was the first time any of the members had to implement a mock object for testing. Creating and grouping input domains for each method into partitions based on the given requirements was a difficult task and required a lot of correcting and backtracking. One of the challenges that the group encountered was when implementing the test cases into JUnit methods, only one member could code at a time to avoid conflicts in GitHub. To overcome this, the group decided to use Replit which allowed all members of the group to simultaneously code, increasing productivity significantly. Another challenge that the group encountered was the creation of too many test cases per method, which would lead to duplicate test domains. The way the group overcame the challenge was by going through all of the test cases that were created on paper, and deciding which ones were redundant and thus should be discarded after discussing possible duplicates. Through this assignment, the group learned the specifics of black-box testing techniques, in which the source code is not provided, and only the requirements can be scrutinized. Furthermore, this assignment served to further familiarize the group members with JUnit testing and good approaches to take when developing tests, such as splitting them up by partitions. 
 
-# 6 Comments/feedback on the lab itself
+# Comments and Feedback on The Lab Assignment
 
 Text…
