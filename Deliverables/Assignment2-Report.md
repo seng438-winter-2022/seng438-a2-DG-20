@@ -19,7 +19,7 @@
 * [2.2 Methods To Be Tested](#methods-to-be-tested)
 * [2.3 Test Determination Procedures and Team Work Division](#test-determination-procedures-and-team-work-division)
 * [2.4 Designed Partitions](#designed-partitions)
-* [2.5 Discussion on Benefits and Drawbacks of Mocking](#discussion_on_benefits_and_drawbacks_of_mocking)
+* [2.5 Discussion on Benefits and Drawbacks of Mocking](#discussion-on-benefits-and-drawbacks-of-mocking)
 
 [3 Test Cases Developed](#test-cases-developed)
 * [3.1 Range](#range)
