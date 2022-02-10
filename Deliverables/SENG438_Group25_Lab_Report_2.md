@@ -58,7 +58,7 @@ The following test plan is designed to perform a thorough testing on 5 methods e
 * calculateRowTotal(Values2D data, int row, int[] validCols)
 * createNumberArray(double[] data)
 * equal(double[][] a, double[][] b)
-* getCumulativePercentages(KeyedValues data)
+* clone(double [][] source)
 
 ### Test Determination Procedures and Team Work Division
 To develop the unit tests that will be used to thoroughly test the Range class and DataUtilities class, the group will employ the use of peer-programming. As such, the group will divide into pairs, where one pair will focus on the development of test cases for the Range class and the other will focus on the development of test cases for the DataUtilities test cases. Prior to splitting into pairs, each member of the group will read through the JavaDocs of the selected methods and discuss what exactly each method should be doing. After splitting into pairs, each pair will take as long as they require to determine edge cases, equivalence classes, and invalid input tests to ensure every possible functionality of the method works as specified. 
