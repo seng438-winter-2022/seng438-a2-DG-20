@@ -260,37 +260,37 @@ Partitions Used in This:
 	column = {negative, non-negative, above input range}
 
 <ol>
-<li>data = null and column = 2
+<li>calculateColumnTotalForNullDataTest: data = null and column = 2
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 3.123, getValue(1, 2) = 4, getValue(2, 2) = -55.009. Set column = 2
+<li>calculateColumnTotalValidDataRealTest: First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 3.123, getValue(1, 2) = 4, getValue(2, 2) = -55.009. Set column = 2
 	<ul>
 		<li>Covers partitions 3. and 6.</li>
 		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -47.886.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 2.873, getValue(1, 2) = 0, getValue(1, 1) = 67.622, getValue(2, 2) = -43.132. Set column = 2
+<li>calculateColumnTotalValidDataExtraTest: First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 2) = 2.873, getValue(1, 2) = 0, getValue(1, 1) = 67.622, getValue(2, 2) = -43.132. Set column = 2
 	<ul>
 		<li>Covers partitions 3. and 6.</li>
 		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of -40.259.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
+<li>calculateColumnTotalUnderAcceptableColTest: First, create a mock object, set the return value of getRowCount() to 4. Set return values of getValue(0, 3) = 17.17, getValue(1, 3) = -2, getValue(2, 3) = -0.93, getValue(3, 3) = 32.11 and column = -1
 	<ul>
 		<li>Covers partitions 1. and 6.</li>
 		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123, getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
+<li>calculateColumnTotalOverAcceptableColTest: First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 90.80, getValue(1, 1) = 88.320, getValue(2, 1) = 7.8123, getValue(0, 0) = 76.323, getValue(1, 0) = 59.92, getValue(2, 0) = 5.454, and column = 2
 	<ul>
 		<li>Covers partitions 2. and 6.</li>
 		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
+<li>calculateColumnTotalBoundaryTest: First, create a mock object, set the return value of getRowCount() to 3. Set return values of getValue(0, 1) = 58.62, getValue(1, 1) = 98.73, getValue(2, 1) = 5.123, getValue(0, 0) = 5.6, getValue(1, 0) = -9.3, getValue(2, 0) = 501.13 and column = 1
 	<ul>
 		<li>Boundary condition test for “column” variable.</li>
 		<li>Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 162.473.</li>
@@ -308,37 +308,37 @@ Partitions Used in This:
 	row = {positive number, negative number, above input range}
 	
 <ol>
-<li>data = null and row = 2
+<li>calculateRowTotalForNullDataTest: data = null and row = 2
 	<ul>
 		<li>Covers partitions 3. and 4.</li>
 		<li>Expected output: IllegalArgumentException Thrown.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(0, 0) = 8.71, getValue(0, 1) = 1, getValue(0, 2) = -22.394. Set row = 0
+<li>calculateRowTotalValidDataRealTest: First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(0, 0) = 8.71, getValue(0, 1) = 1, getValue(0, 2) = -22.394. Set row = 0
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Returns a double of the summation of values in row 0, resulting in a return value of -12.684.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 37.17, getValue(1, 1) = 0, getValue(1, 2) = 63.193, getValue(2, 2) = -200.837. Set row = 1
+<li>calculateRowTotalValidDataExtraTest: First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 37.17, getValue(1, 1) = 0, getValue(1, 2) = 63.193, getValue(2, 2) = -200.837. Set row = 1
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: Returns a double of the summation of values in column 2, resulting in a return value of 100.363.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
+<li>calculateRowTotalUnderAcceptableColTest: First, create a mock object, set the return value of getColumnCount() to 4. Set return values of getValue(0, 0) = 17.17, getValue(0, 1) = -9, getValue(0, 2) = -0.123, getValue(0, 3) = 8.127 and row = -1
 	<ul>
 		<li>Covers partitions 1. and 5.</li>
 		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 90.80, getValue(1, 1) = 88.320, getValue(1, 2) = 7.8123, getValue(0, 0) = 31.912, getValue(0, 1) =8.29, getValue(0, 2) = 14.289 and row = 2
+<li>calculateRowTotalOverAcceptableColTest: First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 90.80, getValue(1, 1) = 88.320, getValue(1, 2) = 7.8123, getValue(0, 0) = 31.912, getValue(0, 1) =8.29, getValue(0, 2) = 14.289 and row = 2
 	<ul>
 		<li>Covers partitions 2. and 6.</li>
 		<li>Expected output: ExpectationError from JMock API.</li>
 	</ul>
 	</li>
-<li>First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 36.738, getValue(1, 1) = 89.324, getValue(1, 2) = 2.145, getValue(0, 0) = 32.483, getValue(0, 1) = 19.82, getValue(0, 2) = 71.21 and row = 1
+<li>calculateRowTotalBoundaryTest: First, create a mock object, set the return value of getColumnCount() to 3. Set return values of getValue(1, 0) = 36.738, getValue(1, 1) = 89.324, getValue(1, 2) = 2.145, getValue(0, 0) = 32.483, getValue(0, 1) = 19.82, getValue(0, 2) = 71.21 and row = 1
 	<ul>
 		<li>Boundary condition test for column variable.</li>
 		<li>Expected output: Returns a double of the summation of values in column 1, resulting in a return value of 128.207.</li>
@@ -355,31 +355,31 @@ Partitions Used in This:
 	data = {null, not null}
 	
 <ol>	
-<li>data = null
+<li>createNumberArrayNullDataTest: data = null
 	<ul>
 		<li>Covers partition 4.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
 	</ul>
 	</li>
-<li>data = [-9.1, -100.43, -99.5555]
+<li>createNumberArrayNegativeDoublesTest: data = [-9.1, -100.43, -99.5555]
 	<ul>
 		<li>Covers partitions 3. and 5. (negative double input types).</li>
 		<li>Expected output: Constructs an array of Number objects = [-9.1, -100.43, -99.5555].</li>
 	</ul>
 	</li>
-<li>data = [123.123123123, 8.888888888]
+<li>createNumberArrayPositiveDoublesTest: data = [123.123123123, 8.888888888]
 	<ul>
 		<li>Covers partitions 3. and 5. (positive double input types).</li>
 		<li>Expected output: Constructs an array of Number objects = [123.123123123, 8.888888888].</li>
 	</ul>
 	</li>
-<li>data = [1, 2, 3, 4]
+<li>createNumberArrayIntsTest: data = [1, 2, 3, 4]
 	<ul>
 		<li>Cover partitions 3. and 5. (integer input types).</li>
 		<li>Expected output: Constructs an array of Number objects = [1.00, 2.00, 3.00, 4.00].</li>
 	</ul>
 	</li>
-<li>data = [20.91123123, -73.12, 7]
+<li>createNumberArrayMixedTest: data = [20.91123123, -73.12, 7]
 	<ul>
 		<li>Covers partitions 3. and 5. (mixed input types).</li>
 		<li>Expected output: Constructs an array of Number objects = [20.91123123, -73.12, 7.00].</li>
@@ -397,55 +397,55 @@ Partitions Used in This:
 	b = {null, numbers}
 
 <ol>
-<li>a = null and b = null
+<li>equalNullsTest: a = null and b = null
 	<ul>
 		<li>Cover partition 4.</li>
 		<li>Expected output: Returns true, the arrays a and b can be null.</li>
 	</ul>
 	</li>
-<li>a = null and b = {[0, 1, 2], [0, 1, 2]}
+<li>equalNullAndValidTest: a = null and b = {[0, 1, 2], [0, 1, 2]}
 	<ul>
 		<li>Cover partitions 3. and 4.</li>
 		<li>Expected output: Returns false.</li>
 	</ul>
 	</li>
-<li>a = {[0, 1, 2], [3, 4, 5]} and b = {[0, 1, 2], [3, 4, 5]}
+<li>equalNumbersMatchTest: a = {[0, 1, 2], [3, 4, 5]} and b = {[0, 1, 2], [3, 4, 5]}
 	<ul>
 		<li>Cover partitions 3. And 5.</li>
 		<li>Expected output: Returns true, the values in both arrays a and b match and have the same dimensions.</li>
 	</ul>
 	</li>
-<li>a = {[0, 1, 2], [3, 4, 5]} and b = {[3, 4, 5],[0, 1, 2]}
+<li>equalNumbersWrongOrderTest: a = {[0, 1, 2], [3, 4, 5]} and b = {[3, 4, 5],[0, 1, 2]}
 	<ul>
 		<li>Cover partitions 3. And 5.</li>
 		<li>Expected output: Returns false, the values in both arrays a and b don’t match (reverse order).</li>
 	</ul>
 	</li>
-<li>a = {[0, 1], [3, 4]} and b = {[0, 1], [3, 4], [NaN, NaN]}
+<li>equalNumbersDifferentDimensionsTest: a = {[0, 1], [3, 4]} and b = {[0, 1], [3, 4], [NaN, NaN]}
 	<ul>
 		<li>Cover partitions 3. and 5.</li>
 		<li>Expected output: Returns false, the arrays a and b do not have the same dimensions.</li>
 	</ul>
 	</li>
-<li>a = {[NaN, NaN]} and b = {[NaN, NaN]}
+<li>equalNaNMatchTest: a = {[NaN, NaN]} and b = {[NaN, NaN]}
 	<ul>
 		<li>Cover partitions 3. and 5.</li>
 		<li>Expected output: Returns true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).</li>
 	</ul>
 	</li>
-<li>a = {[INF, INF]} and b = {[INF, INF]}
+<li>equalINFMatchTest: a = {[INF, INF]} and b = {[INF, INF]}
 	<ul>
 		<li>Cover partitions 3. and 5.</li>
 		<li>Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).</li>
 	</ul>
 	</li>
-<li>a = {[INF, INF], [NaN, NaN]} and b = {[INF, INF], [NaN, NaN]}
+<li>equalINFAndNaNMatchTest: a = {[INF, INF], [NaN, NaN]} and b = {[INF, INF], [NaN, NaN]}
 	<ul>
 		<li>Cover partitions 3. and 5.</li>
 		<li>Expected output: Return true, the arrays a and b have the same values (NaNs are considered equal and so are INFs).</li>
 	</ul>
 	</li>
-<li>a = {[INF, INF], [NaN, NaN]} and b = {[NaN, NaN], [INF, INF]}
+<li>equalINFAndNaNMismatchTest: a = {[INF, INF], [NaN, NaN]} and b = {[NaN, NaN], [INF, INF]}
 	<ul>
 		<li>Cover partitions 3. and 5.</li>
 		<li>Expected output: Return false, the arrays a and b do not have the same values (NaNs are considered equal and so are INFs).</li>
@@ -462,31 +462,31 @@ Partitions Used in This:
 	source = {null, not null}
 	
 <ol>
-<li>source = null
+<li>cloneNullTest: source = null
 	<ul>
 		<li>Covers partition 4.</li>
 		<li>Expected output: IllegalArgumentExceptionThrown.</li>	
 	</ul>
 	</li>
-<li>source = {[12.32, 29.48, 30.7], [91.91, 8.19, 28.29]}
+<li>clonePositiveDoublesTest: source = {[12.32, 29.48, 30.7], [91.91, 8.19, 28.29]}
 	<ul>
 		<li>Covers partition 3. and 5.</li>
 		<li>Expected output: a 2D double array, which is the exact copy of the original: {[12.32, 29.48, 30.7], [91.91, 8.19, 28.29]}.</li>
 	</ul>
 	</li>
-<li>source = {[-9.88, -9766.2, -0.1], [-0.2], [-908.123]}
+<li>cloneNegativeDoublesTest: source = {[-9.88, -9766.2, -0.1], [-0.2], [-908.123]}
 	<ul>
 		<li>Covers partition 3. and 5.</li>
 		<li>Expected output: a 2D double array, which is the exact copy of the original: {[-9.88, -9766.2, -0.1], [-0.2], [-908.123]}.</li>
 	</ul>
 	</li>
-<li>source = {[-2,3,5], [6,13,-12], [4,9,2], [7,8,9]}
+<li>cloneIntegersTest: source = {[-2,3,5], [6,13,-12], [4,9,2], [7,8,9]}
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: a 2D array, which is the exact copy of the original: {[-2,3,5], [6,13,-12], [4,9,2], [7,8,9]}.</li>
 	</ul>
 	</li>
-<li>source = {[12, 13.1, -1, 123.456456]}
+<li>cloneMixedTest: source = {[12, 13.1, -1, 123.456456]}
 	<ul>
 		<li>Covers partitions 3. and 5.</li>
 		<li>Expected output: a 2D double array, which is the exact copy of the original: {[12, 13.1, -1, 123.456456]}.</li>
