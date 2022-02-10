@@ -501,9 +501,9 @@ Partitions Used in This:
 
 <hr>
 
-# 4 How the team work/effort was divided and managed
+# 4 Division of Effort and Lessons Learned From Teamwork
 
-Text…
+The team work was divided among the two pairs and we implemented peer programming where one student piloted the writing of the code while the other communicated the created test cases and oversaw the writing of the code. One pair focused on creating test cases on paper for the Range class, whereas the other pair focused on creating test cases on paper for the DataUtilities class. Once the test cases were created, the group came together and developed the code for the tests simultaneously using Replit. The general formatting of the test cases were thought of as a group along with the splitting of each test into general partitions. The lessons learned from the teamwork in this lab were the importance of having an organized approach to developing test cases to be more efficient as a group. Furthermore, this lab allowed us to utilize peer programming in an efficient way, partnered with simultaneous group programming to complete the coding in the least amount of time possible.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
