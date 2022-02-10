@@ -93,7 +93,7 @@ Partitions Used in This:
 	factor = {negative, non-negative}
 
 <ol> 
-	<li><b>scaleNullRangeNegativeFactorTest:</b> base = null and factor = -5.345
+	<li> base = null and factor = -5.345
 	<ul>
 		<li>Covers partitions 1. and 4.</li>
 		<li>Expected output: IllegalArgumentException thrown.</li>
