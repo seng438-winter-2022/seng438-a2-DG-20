@@ -507,4 +507,4 @@ Difficulties encountered in this lab were the clarity in the designing of test c
 
 # Comments and Feedback on The Lab Assignment
 
-Text…
+This lab allowed us to better understand how to create unit tests, perform JUnit testing, and work with mock objects in a collaborative environment. Overall, it taught us how to work effectively as a team and use each other's strengths to achieve a common goal. However, the instructions for this lab conflicted with the JavaDocs actually given (in terms of the number of methods). Furthermore, the provided test case example for a mock object did not run without the inclusion of a jar file that students had to externally download. A suggestion for the future would be to ensure that all materials provided work with the system that was provided, and that the instructions matched the JavaDocs to avoid any confusion.
