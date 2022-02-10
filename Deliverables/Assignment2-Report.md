@@ -27,11 +27,7 @@
 
 [4 Division of Effort and Lessons Learned From Teamwork](#division-of-effort-and-lessons-learned-from-teamwork)
 
-[5 Pair Testing Management and Division of Responsibilities](#pair-testing-management-and-division-of-responsibilities)
-
-[6 Lessons Learned from Teamwork](#lessons-learned-from-teamwork)
-
-[7 Difficulties Encountered, Challenges Overcome, and Lessons Learned](#difficulties-encountered-challenges-overcome-and-lessons-learned)
+[5 Difficulties Encountered, Challenges Overcome, and Lessons Learned](#difficulties-encountered-challenges-overcome-and-lessons-learned)
 
 [8 Comments and Feedback on The Lab Assignment](#comments-and-feedback-on-the-lab-assignment)
 
@@ -505,7 +501,7 @@ Partitions Used in This:
 
 The team work was divided among the two pairs and we implemented peer programming where one student piloted the writing of the code while the other communicated the created test cases and oversaw the writing of the code. One pair focused on creating test cases on paper for the Range class, whereas the other pair focused on creating test cases on paper for the DataUtilities class. Once the test cases were created, the group came together and developed the code for the tests simultaneously using Replit. The general formatting of the test cases were thought of as a group along with the splitting of each test into general partitions. The lessons learned from the teamwork in this lab were the importance of having an organized approach to developing test cases to be more efficient as a group. Furthermore, this lab allowed us to utilize peer programming in an efficient way, partnered with simultaneous group programming to complete the coding in the least amount of time possible.
 
-# 5 Difficulties encountered, challenges overcome, and lessons learned
+# Difficulties Encountered, Challenges Overcome, and Lessons Learned
 
 Text…
 
