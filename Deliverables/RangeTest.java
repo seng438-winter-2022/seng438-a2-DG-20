@@ -110,7 +110,7 @@ public class RangeTest {
     @Test(expected = IllegalArgumentException.class)
     public void shiftNullRangeFalseZeroCrossingTest() throws Exception
     {
-    	Range returnObj = generalRange.shift(nullRange, 500000, false);
+    	Range returnObj = generalRange.shift(nullRange, 500000, true);
     }
     
     // Tests for a valid Range object along with a true value for "allowZeroCrossing" which should return a Range object which matches the expected 
@@ -227,5 +227,12 @@ public class RangeTest {
     public void toStringNullRangeTest() throws Exception
     {
     	String actualMessage = nullRange.toString();
+    }
+    
+    // Tear-down is not needed for these tests.
+    @After
+    public void tearDown()
+    {
+    	
     }
 }
