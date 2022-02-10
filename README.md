@@ -1,4 +1,8 @@
-# seng438-assignment-2
+# seng438-assignment-1
+
+# Group 25 Submission
+
+- Submission documents (JUnit test files for each class and lab report as a markdown file) in folder titled Deliverables.
 
 # Guidline
 
