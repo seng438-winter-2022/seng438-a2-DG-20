@@ -6,7 +6,7 @@
 
 ## To Run:
 - Download and extract [Assignment2-artifact.zip](https://github.com/seng438-winter-2022/seng438-a2-DG-20/blob/main/Assignment2-artifact.zip).
-- Create new Java Project in Eclipse following same steps as outlined in the lab document, "Add External JARs" from the extract Assignment2-artifact folder.
+- Create new Java Project in Eclipse following same steps as outlined in the lab document, "Add External JARs" from the extracted Assignment2-artifact folder under jfreechart-1.0.19/jfreechart-1.0.19/lib.
 - Add the [org/jfree/data/test](https://github.com/seng438-winter-2022/seng438-a2-DG-20/tree/main/org/jfree/data/test) folder into the src folder.
 - Right-click each test file and select Run As->JUnit Test.
 
